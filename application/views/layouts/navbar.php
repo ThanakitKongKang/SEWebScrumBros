@@ -10,18 +10,22 @@
       </button>
       <a class="navbar-brand" href="<?php echo base_url(); ?>">Home</a>
     </div>
-
+  
     <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<?php echo current_url() ==  base_url().'projects' ? 'active' : ''; ?>">
             <a href="<?php echo base_url().'projects'; ?>">
                 Projects
+-->
                 <!-- <span class="sr-only">(current)</span> -->
+                <!--
             </a>
         </li>
       </ul>
-
+    
+-->
       <ul class="nav navbar-nav navbar-right">
           <?php if ($this->session->userdata('logged_in')): ?>
               <li class="dropdown">
@@ -36,7 +40,7 @@
                 </li>
 
           <?php else: ?>
-              <li><a href="<?php echo base_url().'users/register'; ?>">Register</a></li>
+              <!--<li><a href="<?php echo base_url().'users/register'; ?>">Register</a></li>-->
           <?php endif; ?>
       </ul>
     </div>
