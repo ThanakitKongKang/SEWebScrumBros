@@ -39,7 +39,7 @@ This project was setup using MAMP on Mac OS X El Capitan 10.11.16.
 1. Move the repository folder to the `/Applications/MAMP/htdocs` folder on your local hard drive
 1. **[Optional]** - Go to the `/Applications/MAMP/bin/php` folder and rename `php7.1.8` to `OLD_php7.1.8` (in order to use PHP 5.6.31 according to [this post](https://stackoverflow.com/a/16785309))
 1. Start the MAMP application
-1. In a browser, navigate to http://localhost:8888/codeigniter-project
+1. In a browser, navigate to http://localhost/SEWebScrumBros
 
 ### Database Structure
 
