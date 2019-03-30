@@ -27,9 +27,9 @@ session_start(); ?>
     unset($_SESSION["SuccessLogin"]);
 } ?>
 
-    <div class="container">
+    <div class="container mt-3">
 
-        <div class="jumbotron jumbotron-fluid bg-light">
+        
             <div class="row">
                 <?php 
                 $setColumn = 3;
@@ -39,37 +39,43 @@ session_start(); ?>
                 $stmt->execute();
                 while ($row = $stmt->fetch()) {
                     ?>
-                <div class="col-4">
-                    <div class="card m-3">
-                        <div class="card-body col">
-                            <h4 class="text-primary"><?= $row["subjectName_Th"] ?><span class="text-muted" style="font-size:0.5em;float:right">(<?=$row["role"]?>)</span></h4>
-                            <h6 class="text-muted mb-3"><?= $row["subjectName_En"] ?></h6>
-                            <p class="card-text mb-3"><?= $row["subject_code"] ?> | ปีการศึกษา 2561 | เทอม 2</p>
-                            <a href="#" class="btn btn-primary">จัดการ</a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="col-4">
+
+                        <div class="card m-3">
+
+                            <div class="card-body col" style="min-height:250px">
+                                <span class="text-muted" style="font-size:0.8em;float:right">(<?= $row["role"] ?>)</span>
+                                <h4 class="text-primary clearfix"><?= $row["subjectName_Th"] ?></h4>
+                                <span class="text-muted mb-3"><?= $row["subjectName_En"] ?></span>
+                                <p class="card-text my-3"><?= $row["subject_code"] ?> | ปีการศึกษา 2561 | เทอม 2</p>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-
-
-                <?php if ($ColumnStart == $setColumn) {
-                    echo '</div><div class="row">';
-                    $ColumnStart = 0;
-                }
-                $ColumnStart++;
-            } ?>
-
+                </a>
             </div>
-        </div>
-        
-        <?php 
-    } ?>
 
-        <?php if (empty($_SESSION["username"])) {
-            echo "<div style='text-align: center' ;>";
-            echo "ไม่สามารถทำรายการได้";
-            echo "<a href='login.php'> กรุณาเข้าสู่ระบบ</a>";
-            echo "</div>";
+
+            <?php if ($ColumnStart == $setColumn) {
+                echo '</div><div class="row">';
+                $ColumnStart = 0;
+            }
+            $ColumnStart++;
         } ?>
+
+        
+    </div>
+
+    <?php 
+} ?>
+
+    <?php if (empty($_SESSION["username"])) {
+        echo "<div style='text-align: center' ;>";
+        echo "ไม่สามารถทำรายการได้";
+        echo "<a href='login.php'> กรุณาเข้าสู่ระบบ</a>";
+        echo "</div>";
+    } ?>
 </body>
 
 </html> 
