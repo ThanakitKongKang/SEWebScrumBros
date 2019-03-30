@@ -30,36 +30,46 @@ session_start(); ?>
     <div class="container">
 
         <div class="jumbotron jumbotron-fluid bg-light">
-
-            <?php 
-
-            $stmt = $pdo->prepare("SELECT * FROM subject,user_role,user_info where user_info.UID = user_role.UID AND user_info.UID = ?");
-            $stmt->bindParam(1, $_SESSION["UID"]);
-            $stmt->execute();
-            while ($row = $stmt->fetch()) {
-                ?>
-            <span class="card m-3" style="width:18rem">
-                <div class="card-body col">
-                    <h4 class="text-primary"><?=$row["subjectName_Th"]?></h4>
-                    <h6 class="text-muted mb-3"><?=$row["subjectName_En"]?></h6>
-                    <p class="card-text mb-3"><?=$row["subject_code"]?> | ปีการศึกษา 2561 | เทอม 2</p>
-                    <a href="#" class="btn btn-primary">จัดการ</a>
+            <div class="row">
+                <?php 
+                $setColumn = 3;
+                $ColumnStart = 1;
+                $stmt = $pdo->prepare("SELECT * FROM subject,user_role,user_info where user_info.UID = user_role.UID AND user_info.UID = ?");
+                $stmt->bindParam(1, $_SESSION["UID"]);
+                $stmt->execute();
+                while ($row = $stmt->fetch()) {
+                    ?>
+                <div class="col-4">
+                    <div class="card m-3">
+                        <div class="card-body col">
+                            <h4 class="text-primary"><?= $row["subjectName_Th"] ?><span class="text-muted" style="font-size:0.5em;float:right">(<?=$row["role"]?>)</span></h4>
+                            <h6 class="text-muted mb-3"><?= $row["subjectName_En"] ?></h6>
+                            <p class="card-text mb-3"><?= $row["subject_code"] ?> | ปีการศึกษา 2561 | เทอม 2</p>
+                            <a href="#" class="btn btn-primary">จัดการ</a>
+                        </div>
+                    </div>
                 </div>
-            </span>
-            <?php 
-        } ?>
 
+
+                <?php if ($ColumnStart == $setColumn) {
+                    echo '</div><div class="row">';
+                    $ColumnStart = 0;
+                }
+                $ColumnStart++;
+            } ?>
+
+            </div>
         </div>
-    </div>
-    <?php 
-} ?>
-
-    <?php if (empty($_SESSION["username"])) {
-        echo "<div style='text-align: center' ;>";
-        echo "ไม่สามารถทำรายการได้";
-        echo "<a href='login.php'> กรุณาเข้าสู่ระบบ</a>";
-        echo "</div>";
+        
+        <?php 
     } ?>
+
+        <?php if (empty($_SESSION["username"])) {
+            echo "<div style='text-align: center' ;>";
+            echo "ไม่สามารถทำรายการได้";
+            echo "<a href='login.php'> กรุณาเข้าสู่ระบบ</a>";
+            echo "</div>";
+        } ?>
 </body>
 
 </html> 

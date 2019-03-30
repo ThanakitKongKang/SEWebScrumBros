@@ -28,7 +28,8 @@ header("refresh:5;url=login.php");
 
     <div class="alert alert-secondary p-3">
         <div class="container">ออกจากระบบสำเร็จ
-        <b><a href="login.php">กลับหน้าหลัก</a>ใน 5 วินาที...</b>
+
+            <b><a href="login.php">กลับหน้าหลัก</a>ใน 5 วินาที...</b>
         </div>
     </div>
 
