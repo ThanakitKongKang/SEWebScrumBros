@@ -40,7 +40,7 @@
           -->
 
         <?php if (!empty($_SESSION)) { ?>
-        <span class="navbar-text fsize">Welcome <?= $_SESSION["firstName"] ?> </span>
+        <span class="navbar-text fsize text-primary">Welcome <?= $_SESSION["firstName"] ?> </span>
         <a href="logout.php"><button class="btn btn-outline-danger mx-3" type="button">ออกจากระบบ</button></a>
 
         <?php 
