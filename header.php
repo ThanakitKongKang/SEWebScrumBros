@@ -39,9 +39,9 @@
         </form>
           -->
 
-        <?php if (!empty($_SESSION)) { ?>
+        <?php if (!empty($_SESSION["firstName"])) { ?>
         <span class="navbar-text fsize text-primary"><?= $_SESSION["firstName"]," ",$_SESSION["lastName"] ?> </span>
-        <a href="logout.php"><button class="btn btn-outline-danger mx-3" type="button">ออกจากระบบ</button></a>
+        <a href="logout.php"><button class="btn btn-danger mx-3" type="button">ออกจากระบบ</button></a>
 
         <?php 
     } ?>

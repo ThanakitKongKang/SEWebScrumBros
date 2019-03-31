@@ -1,33 +1,63 @@
 <?php
 include "connect.php";
+include "../head.php";
 session_start();
-$stmt = $pdo->prepare("SELECT * FROM user_info LEFT JOIN user_role ON user_info.UID = user_role.UID WHERE username = ? AND password = ?");
+//เช็คว่าบัญชีถูกล็อกหรือยัง
+$stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
 $stmt->bindParam(1, $_POST["username"]);
-$stmt->bindParam(2, $_POST["password"]);
 $stmt->execute();
 $row = $stmt->fetch();
-// หาก username และ password ตรงกัน จะมีข้อมูลในตัวแปร $row
-
+//ถ้าบัญชีไม่ถูกล็อกให้ทำต่อ
 if (!empty($row[0])) {
-  // นำข้อมูลผู้ใช้จากฐานข้อมูลเขียนลง session 2 ค่า
-  $_SESSION["UID"] = $row["UID"];
-  $_SESSION["username"] = $row["username"];
-  $_SESSION["firstName"] = $row["firstName"];
-  $_SESSION["lastName"] = $row["lastName"];
-  $_SESSION["stdId"] = $row["stdId"];
-  $_SESSION["email"] = $row["email"];
-  $_SESSION["role"] = $row["role"];
-  $_SESSION["SuccessLogin"] = "Success";
-  // แสดง link เพื่อไปยังหน้าต่อไปหลังจากตรวจสอบสำเร็จแล้ว
-  // กรณี username และ password ไม่ตรงกัน
+  if ($row["count_CheckLogin"] < 3) {
+    $stmt = $pdo->prepare("SELECT * FROM user_info LEFT JOIN user_role ON user_info.UID = user_role.UID WHERE username = ? AND password = ?");
+    $stmt->bindParam(1, $_POST["username"]);
+    $stmt->bindParam(2, $_POST["password"]);
+    $stmt->execute();
+    $row = $stmt->fetch();
+    // หาก username และ password ตรงกัน จะมีข้อมูลในตัวแปร $row
 
-  header('location:../home.php');
-  ?>
+    if (!empty($row[0])) {
+      // นำข้อมูลผู้ใช้จากฐานข้อมูลเขียนลง session 2 ค่า
+      $_SESSION["UID"] = $row["UID"];
+      $_SESSION["username"] = $row["username"];
+      $_SESSION["firstName"] = $row["firstName"];
+      $_SESSION["lastName"] = $row["lastName"];
+      $_SESSION["stdId"] = $row["stdId"];
+      $_SESSION["email"] = $row["email"];
+      $_SESSION["role"] = $row["role"];
+      $_SESSION["successLogin"] = true;
+      // แสดง link เพื่อไปยังหน้าต่อไปหลังจากตรวจสอบสำเร็จแล้ว
+      // กรณี username และ password ไม่ตรงกัน
+
+      header('location:../home.php');
+      ?>
 <?php 
 } else {
-  echo "<div style='text-align: center';>";
-  echo "ไม่สำเร็จ ชื่อหรือรหัสผ่านไม่ถูกต้อง";
-  echo "<a href='../login.php'> เข้าสู่ระบบอีกครัง</a>";
-  echo "</div>";
+  //อัพเดทค่า count_CheckLogin ให้ +1
+  $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = count_CheckLogin + 1 WHERE username = ?");
+  $stmt->bindParam(1, $_POST["username"]);
+  $stmt->execute();
+  //ดึงค่า count_CheckLogin แสดงให้ผู้ใช้เห็นว่าล็อกอินได้อีกกี่ครั้ง
+  $stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
+  $stmt->bindParam(1, $_POST["username"]);
+  $stmt->execute();
+  $row = $stmt->fetch();
+  $_SESSION["failedLogin"] = 3 - $row["count_CheckLogin"];
+  if ($row["count_CheckLogin"] == 3) {
+    $_SESSION["accountLocked"] = true;
+  }
+  header('location:../login.php');
+}
+}
+//กรณีบัญชีถูกล็อก
+else {
+  $_SESSION["accountLocked"] = true;
+  header('location:../login.php');
+}
+}
+else{
+  $_SESSION["accNotFound"] = true;
+  header('location:../login.php');
 }
 ?> 
