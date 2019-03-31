@@ -4,7 +4,7 @@
 
     <div class="alert alert-danger p-3">
         <div class="container text-center">ไม่สำเร็จ ท่านกรอกชื่อหรือรหัสผ่าน
-            <span class='text-danger'>ไม่ถูกต้อง 3 ครั้ง</span>
+            <span class='text-danger'>ไม่ถูกต้อง ครบ 3 ครั้ง</span>
             <br><span class='text-danger'>บัญชีของท่านถูกล็อก</span> กรุณาติดต่อเจ้าหน้าที่
         </div>
 

@@ -20,7 +20,7 @@ session_start(); ?>
     <?php include('/alert/accNotFound.php'); ?>
     <div class="container">
 
-        <div class="form-group shadow p-3 mb-5 bg-white rounded p-3" style="top:30%;left:30%;position: fixed;min-height:200px">
+        <div class="form-group shadow-lg p-3 mb-5 bg-light rounded p-3" style="top:30%;left:30%;position: fixed;min-height:200px">
             <form action="./model/check-login.php" method="POST">
 
                 <div class="input-group mb-3">
