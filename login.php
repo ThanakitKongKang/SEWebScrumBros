@@ -8,16 +8,16 @@ session_start(); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php include "head.php"; ?>
+    <?php include "./head.php"; ?>
 
 
 </head>
 
 <body>
-    <?php include('header.php'); ?>
-    <?php include('/alert/failLogin.php'); ?>
-    <?php include('/alert/accountLocked.php'); ?>
-    <?php include('/alert/accNotFound.php'); ?>
+    <?php include "./header.php"; ?>
+    <?php include "./alert/failLogin.php"; ?>
+    <?php include "./alert/accountLocked.php"; ?>
+    <?php include "./alert/accNotFound.php"; ?>
     <div class="container">
 
         <div class="form-group shadow-lg p-3 mb-5 bg-light rounded p-3" style="top:30%;left:30%;position: fixed;min-height:200px">
