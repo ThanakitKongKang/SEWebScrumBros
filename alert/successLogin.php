@@ -2,7 +2,7 @@
         //alert แจ้งเตือนเข้าสู่ระบบสำเร็จ ต้องลบ session เพราะให้มันขึ้นครั้งเดียว
         ?>
 
-    <div class="alert alert-success p-3">
+    <div class="alert alert-success p-3 text-center shadow-sm p-3 mb-5 rounded">
         <div class="container">เข้าสู่ระบบสำเร็จ
         </div>
     </div>

@@ -1,0 +1,72 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  $form_width: 100px; // Must be pixels
+  $rbw: $form_width/5; 
+  $red: #c62828;
+  $orange: #EF6C00;
+  $yellow: #F9A825;
+  $green: #2E7D32;
+  $blue: #0277BD;
+  $indigo: #AD1457;
+  $violet: #4527A0;
+  
+  body {
+    background: #BBB;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  form {
+    width: $form_width;
+    background: transparent;
+    margin: 225px auto;
+    background: #fff;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.2);
+    padding: 50px 30px 35px;
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0; 
+      left: 0;
+      width: $rbw;
+      height: 10px;
+      background: $red;
+      box-shadow: $rbw * .6 0 0 0 $orange, $rbw * 1.3 0 0 0 $yellow, $rbw * 1.7 0 0 0 $green, $rbw * 2.5 0 0 0 $blue, $rbw * 3.2 0 0 0 $indigo, $rbw * 4 0 0 0 $violet;
+    }
+  }
+  
+  input, button {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 1.5em;
+    border: 0;
+    background: #ededed;
+    font-size: 1em;
+    border-radius: 5px;
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+  
+  button {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    background: #2fcd72;
+    transition: .25s;
+    box-shadow: 0 5px 0 0 #27ae60;
+    &:hover {
+      background: #27ae60;
+      cursor: pointer;
+    }
+  }
+  
+  

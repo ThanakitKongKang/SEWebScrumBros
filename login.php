@@ -9,59 +9,22 @@ session_start(); ?>
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include "./head.php"; ?>
-
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="scss/login.scss">
 
 </head>
 
 <body>
-    <?php include "./header.php"; ?>
     <?php include "./alert/failLogin.php"; ?>
     <?php include "./alert/accountLocked.php"; ?>
     <?php include "./alert/accNotFound.php"; ?>
-    <div class="container">
-
-        <div class="form-group shadow-lg p-3 mb-5 bg-light rounded p-3" style="top:30%;left:30%;position: fixed;min-height:200px">
-            <form action="./model/check-login.php" method="POST">
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">username</span>
-                    </div>
-                    <input class="form-control" type="text" placeholder="Username" name="username">
-
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon2">password</span>
-                    </div>
-                    <input class="form-control" type="password" placeholder="Password" name="password">
-
-                </div>
 
 
-                <button class="btn btn-primary mt-3" type="submit" id="login-button">Login</button>
-
-            </form>
-        </div>
-
-        <!--
-            <?php if (empty($_SESSION["firstName"])) { ?>
-            <a href="login-form.php?a=1"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">เข้าสู่ระบบ</button></a>
-            <?php 
-        } ?>
-
-
-            <?php if (!empty($_SESSION["firstName"])) { ?>
-            <span class="navbar-text fsize">สวัสดี <?= $_SESSION["firstName"] ?></span>
-            <a href="logout.php"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">ออกจากระบบ</button></a>
-
-            <?php 
-        } ?>
--->
-
-        </form>
-    </div>
+    <form action="./model/check-login.php" method="POST">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit" id="login-button">Login</button>
+    </form>
 </body>
 
 </html> 

@@ -1,0 +1,59 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+form {
+  width: 350px;
+  background: transparent;
+  margin: 70px auto;
+  background: #fff;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  padding: 50px 30px 35px;
+}
+form:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 10px;
+  background: #c62828;
+  box-shadow: 42px 0 0 0 #EF6C00, 91px 0 0 0 #F9A825, 119px 0 0 0 #2E7D32, 175px 0 0 0 #0277BD, 224px 0 0 0 #AD1457, 280px 0 0 0 #4527A0;
+}
+
+input, button {
+  display: block;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 1.5em;
+  border: 0;
+  background: #ededed;
+  font-size: 1em;
+  border-radius: 5px;
+}
+input:active, input:focus, button:active, button:focus {
+  outline: none;
+}
+
+button {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  background: #2fcd72;
+  transition: .25s;
+  box-shadow: 0 5px 0 0 #27ae60;
+}
+button:hover {
+  background: #27ae60;
+  cursor: pointer;
+}
