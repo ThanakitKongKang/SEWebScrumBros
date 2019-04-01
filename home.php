@@ -14,7 +14,7 @@ session_start(); ?>
 <body>
     <?php if (!empty($_SESSION["username"])) { ?>
     <?php include('header.php'); ?>
-    <?php include('/alert/successLogin.php'); ?>
+    <?php include('./alert/successLogin.php'); ?>
    
 
     <div class="container mt-3">
