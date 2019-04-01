@@ -10,7 +10,6 @@ session_start(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include "./head.php"; ?>
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="stylesheet" type="text/css" href="scss/login.scss">
 
 </head>
 
