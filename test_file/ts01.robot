@@ -36,6 +36,12 @@ TC02(Reset Account Lock Count)
     Go To    ${LOGINHOMEPAGE}
     Location Should Be    ${LOGINHOMEPAGE}
     Input Text    name=username    593021274-1
+    Input Text    name=password    srtfjksrjhaf
+    Click Button    login-button
+    Input Text    name=username    593021274-1
+    Input Text    name=password    srsjerwtsrajws
+    Click Button    login-button
+    Input Text    name=username    593021274-1
     Input Text    name=password    meytawut274-1
     Click Button    login-button
     Location Should Be    ${HOMEPAGE}
@@ -44,3 +50,6 @@ TC02(Reset Account Lock Count)
     Page Should Contain    ผู้ช่วยอาจารย์
     Page Should Contain    นักศึกษา
     Click Button    logout
+    Input Text    name=username    593021274-1
+    Input Text    name=password    srtfjksrjhaf
+    Click Button    login-button
