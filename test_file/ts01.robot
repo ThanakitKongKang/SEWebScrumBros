@@ -53,3 +53,9 @@ TC02(Reset Account Lock Count)
     Input Text    name=username    593021274-1
     Input Text    name=password    srtfjksrjhaf
     Click Button    login-button
+    Page Should Contain    Failed, password is
+    Page Should Contain    incorrect.
+    Page Should Contain    you have
+    Page Should Contain    2
+    Page Should Contain    chances, then
+    Page Should Contain    your account will be restricted

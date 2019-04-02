@@ -15,6 +15,10 @@ TC01(Empty password)
     Location Should Be    ${LOGINPAGE}
     Page Should Contain    Failed, password is
     Page Should Contain    incorrect.
+    Page Should Contain    you have
+    Page Should Contain    2
+    Page Should Contain    chances, then
+    Page Should Contain    your account will be restricted
 
 TC02(Empty Username)
     Go To    ${LOGINPAGE}
@@ -44,6 +48,10 @@ TC04(Wrong password)
     Location Should Be    ${LOGINPAGE}
     Page Should Contain    Failed, password is
     Page Should Contain    incorrect.
+    Page Should Contain    you have
+    Page Should Contain    1
+    Page Should Contain    chances, then
+    Page Should Contain    your account will be restricted
 
 TC05(Locked Account)
     Go To    ${LOGINPAGE}

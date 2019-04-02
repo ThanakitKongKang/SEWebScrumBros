@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190402 21:38:47.629" generator="Robot 3.1.1 (Python 2.7.16 on win32)">
+<robot rpa="false" generated="20190402 21:56:54.860" generator="Robot 3.1.1 (Python 2.7.16 on win32)">
 <suite source="C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\ts02.robot" id="s1" name="Ts02">
 <test id="s1-t1" name="TC01(Empty password)">
 <kw name="Open Browser" library="Selenium2Library">
@@ -8,16 +8,16 @@
 <arg>${LOGINPAGE}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:47.984" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:51.593" starttime="20190402 21:38:47.983"></status>
+<msg timestamp="20190402 21:56:58.691" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.267" starttime="20190402 21:56:58.691"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:51.638" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:51.638" starttime="20190402 21:38:51.596"></status>
+<msg timestamp="20190402 21:57:07.293" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.293" starttime="20190402 21:57:07.268"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -25,42 +25,74 @@
 <arg>name=username</arg>
 <arg>chitsutha</arg>
 </arguments>
-<msg timestamp="20190402 21:38:51.640" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:51.894" starttime="20190402 21:38:51.639"></status>
+<msg timestamp="20190402 21:57:07.296" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.507" starttime="20190402 21:57:07.295"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:51.900" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.200" starttime="20190402 21:38:51.900"></status>
+<msg timestamp="20190402 21:57:07.508" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.890" starttime="20190402 21:57:07.508"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.210" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.210" starttime="20190402 21:38:52.202"></status>
+<msg timestamp="20190402 21:57:07.898" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.898" starttime="20190402 21:57:07.891"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Failed, password is</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.280" level="INFO">Current page contains text 'Failed, password is'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.280" starttime="20190402 21:38:52.211"></status>
+<msg timestamp="20190402 21:57:07.932" level="INFO">Current page contains text 'Failed, password is'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.932" starttime="20190402 21:57:07.899"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>incorrect.</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.348" level="INFO">Current page contains text 'incorrect.'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.348" starttime="20190402 21:38:52.285"></status>
+<msg timestamp="20190402 21:57:07.968" level="INFO">Current page contains text 'incorrect.'.</msg>
+<status status="PASS" endtime="20190402 21:57:07.968" starttime="20190402 21:57:07.933"></status>
 </kw>
-<status status="PASS" endtime="20190402 21:38:52.351" critical="yes" starttime="20190402 21:38:47.982"></status>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>you have</arg>
+</arguments>
+<msg timestamp="20190402 21:57:08.005" level="INFO">Current page contains text 'you have'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.005" starttime="20190402 21:57:07.978"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190402 21:57:08.049" level="INFO">Current page contains text '2'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.049" starttime="20190402 21:57:08.006"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>chances, then</arg>
+</arguments>
+<msg timestamp="20190402 21:57:08.082" level="INFO">Current page contains text 'chances, then'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.082" starttime="20190402 21:57:08.051"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>your account will be restricted</arg>
+</arguments>
+<msg timestamp="20190402 21:57:08.124" level="INFO">Current page contains text 'your account will be restricted'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.125" starttime="20190402 21:57:08.083"></status>
+</kw>
+<status status="PASS" endtime="20190402 21:57:08.125" critical="yes" starttime="20190402 21:56:58.690"></status>
 </test>
 <test id="s1-t2" name="TC02(Empty Username)">
 <kw name="Go To" library="Selenium2Library">
@@ -68,16 +100,16 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.356" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
-<status status="PASS" endtime="20190402 21:38:52.432" starttime="20190402 21:38:52.356"></status>
+<msg timestamp="20190402 21:57:08.133" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<status status="PASS" endtime="20190402 21:57:08.241" starttime="20190402 21:57:08.132"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.443" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.443" starttime="20190402 21:38:52.434"></status>
+<msg timestamp="20190402 21:57:08.264" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.265" starttime="20190402 21:57:08.251"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -85,42 +117,42 @@
 <arg>name=password</arg>
 <arg>chitsuthakku2019</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.452" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.688" starttime="20190402 21:38:52.451"></status>
+<msg timestamp="20190402 21:57:08.266" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.455" starttime="20190402 21:57:08.265"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.690" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.905" starttime="20190402 21:38:52.689"></status>
+<msg timestamp="20190402 21:57:08.455" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.633" starttime="20190402 21:57:08.455"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.912" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.913" starttime="20190402 21:38:52.905"></status>
+<msg timestamp="20190402 21:57:08.643" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.644" starttime="20190402 21:57:08.634"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Failed,</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.947" level="INFO">Current page contains text 'Failed,'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.947" starttime="20190402 21:38:52.913"></status>
+<msg timestamp="20190402 21:57:08.683" level="INFO">Current page contains text 'Failed,'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.683" starttime="20190402 21:57:08.645"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>User not found.</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.976" level="INFO">Current page contains text 'User not found.'.</msg>
-<status status="PASS" endtime="20190402 21:38:52.977" starttime="20190402 21:38:52.948"></status>
+<msg timestamp="20190402 21:57:08.714" level="INFO">Current page contains text 'User not found.'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.715" starttime="20190402 21:57:08.684"></status>
 </kw>
-<status status="PASS" endtime="20190402 21:38:52.978" critical="yes" starttime="20190402 21:38:52.354"></status>
+<status status="PASS" endtime="20190402 21:57:08.716" critical="yes" starttime="20190402 21:57:08.131"></status>
 </test>
 <test id="s1-t3" name="TC03(Wrong Username)">
 <kw name="Go To" library="Selenium2Library">
@@ -128,16 +160,16 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:52.987" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
-<status status="PASS" endtime="20190402 21:38:53.065" starttime="20190402 21:38:52.985"></status>
+<msg timestamp="20190402 21:57:08.722" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<status status="PASS" endtime="20190402 21:57:08.803" starttime="20190402 21:57:08.721"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.079" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.079" starttime="20190402 21:38:53.067"></status>
+<msg timestamp="20190402 21:57:08.813" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.813" starttime="20190402 21:57:08.804"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -145,8 +177,8 @@
 <arg>name=username</arg>
 <arg>Wronguser</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.080" level="INFO">Typing text 'Wronguser' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.237" starttime="20190402 21:38:53.080"></status>
+<msg timestamp="20190402 21:57:08.814" level="INFO">Typing text 'Wronguser' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:08.986" starttime="20190402 21:57:08.814"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -154,42 +186,42 @@
 <arg>name=password</arg>
 <arg>chitsuthakku2019</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.238" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.405" starttime="20190402 21:38:53.238"></status>
+<msg timestamp="20190402 21:57:08.988" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.185" starttime="20190402 21:57:08.987"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.406" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.561" starttime="20190402 21:38:53.405"></status>
+<msg timestamp="20190402 21:57:09.186" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.349" starttime="20190402 21:57:09.186"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.580" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.580" starttime="20190402 21:38:53.564"></status>
+<msg timestamp="20190402 21:57:09.357" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.357" starttime="20190402 21:57:09.350"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Failed,</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.606" level="INFO">Current page contains text 'Failed,'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.606" starttime="20190402 21:38:53.581"></status>
+<msg timestamp="20190402 21:57:09.373" level="INFO">Current page contains text 'Failed,'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.374" starttime="20190402 21:57:09.358"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>User not found.</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.627" level="INFO">Current page contains text 'User not found.'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.627" starttime="20190402 21:38:53.607"></status>
+<msg timestamp="20190402 21:57:09.392" level="INFO">Current page contains text 'User not found.'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.392" starttime="20190402 21:57:09.374"></status>
 </kw>
-<status status="PASS" endtime="20190402 21:38:53.628" critical="yes" starttime="20190402 21:38:52.982"></status>
+<status status="PASS" endtime="20190402 21:57:09.393" critical="yes" starttime="20190402 21:57:08.720"></status>
 </test>
 <test id="s1-t4" name="TC04(Wrong password)">
 <kw name="Go To" library="Selenium2Library">
@@ -197,16 +229,16 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.636" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
-<status status="PASS" endtime="20190402 21:38:53.704" starttime="20190402 21:38:53.635"></status>
+<msg timestamp="20190402 21:57:09.399" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<status status="PASS" endtime="20190402 21:57:09.485" starttime="20190402 21:57:09.398"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.724" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.724" starttime="20190402 21:38:53.706"></status>
+<msg timestamp="20190402 21:57:09.515" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.516" starttime="20190402 21:57:09.490"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -214,8 +246,8 @@
 <arg>name=username</arg>
 <arg>chitsutha</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.726" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:53.894" starttime="20190402 21:38:53.725"></status>
+<msg timestamp="20190402 21:57:09.518" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.706" starttime="20190402 21:57:09.517"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -223,42 +255,74 @@
 <arg>name=password</arg>
 <arg>Wrongpassword</arg>
 </arguments>
-<msg timestamp="20190402 21:38:53.895" level="INFO">Typing text 'Wrongpassword' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.044" starttime="20190402 21:38:53.895"></status>
+<msg timestamp="20190402 21:57:09.707" level="INFO">Typing text 'Wrongpassword' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:09.882" starttime="20190402 21:57:09.707"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.046" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.245" starttime="20190402 21:38:54.045"></status>
+<msg timestamp="20190402 21:57:09.884" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.086" starttime="20190402 21:57:09.883"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.258" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.259" starttime="20190402 21:38:54.247"></status>
+<msg timestamp="20190402 21:57:10.097" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.097" starttime="20190402 21:57:10.088"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Failed, password is</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.282" level="INFO">Current page contains text 'Failed, password is'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.282" starttime="20190402 21:38:54.259"></status>
+<msg timestamp="20190402 21:57:10.112" level="INFO">Current page contains text 'Failed, password is'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.112" starttime="20190402 21:57:10.097"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>incorrect.</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.310" level="INFO">Current page contains text 'incorrect.'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.310" starttime="20190402 21:38:54.286"></status>
+<msg timestamp="20190402 21:57:10.130" level="INFO">Current page contains text 'incorrect.'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.130" starttime="20190402 21:57:10.113"></status>
 </kw>
-<status status="PASS" endtime="20190402 21:38:54.311" critical="yes" starttime="20190402 21:38:53.632"></status>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>you have</arg>
+</arguments>
+<msg timestamp="20190402 21:57:10.145" level="INFO">Current page contains text 'you have'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.146" starttime="20190402 21:57:10.131"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190402 21:57:10.169" level="INFO">Current page contains text '1'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.169" starttime="20190402 21:57:10.148"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>chances, then</arg>
+</arguments>
+<msg timestamp="20190402 21:57:10.189" level="INFO">Current page contains text 'chances, then'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.189" starttime="20190402 21:57:10.170"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>your account will be restricted</arg>
+</arguments>
+<msg timestamp="20190402 21:57:10.203" level="INFO">Current page contains text 'your account will be restricted'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.204" starttime="20190402 21:57:10.190"></status>
+</kw>
+<status status="PASS" endtime="20190402 21:57:10.204" critical="yes" starttime="20190402 21:57:09.397"></status>
 </test>
 <test id="s1-t5" name="TC05(Locked Account)">
 <kw name="Go To" library="Selenium2Library">
@@ -266,16 +330,16 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.331" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
-<status status="PASS" endtime="20190402 21:38:54.414" starttime="20190402 21:38:54.330"></status>
+<msg timestamp="20190402 21:57:10.211" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<status status="PASS" endtime="20190402 21:57:10.272" starttime="20190402 21:57:10.211"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.428" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.428" starttime="20190402 21:38:54.415"></status>
+<msg timestamp="20190402 21:57:10.287" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.287" starttime="20190402 21:57:10.274"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -283,8 +347,8 @@
 <arg>name=username</arg>
 <arg>593021274-1</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.429" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.614" starttime="20190402 21:38:54.429"></status>
+<msg timestamp="20190402 21:57:10.288" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.454" starttime="20190402 21:57:10.288"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -292,16 +356,16 @@
 <arg>name=password</arg>
 <arg>thisisthengs</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.615" level="INFO">Typing text 'thisisthengs' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.784" starttime="20190402 21:38:54.614"></status>
+<msg timestamp="20190402 21:57:10.455" level="INFO">Typing text 'thisisthengs' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.599" starttime="20190402 21:57:10.454"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.786" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:54.947" starttime="20190402 21:38:54.785"></status>
+<msg timestamp="20190402 21:57:10.600" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.781" starttime="20190402 21:57:10.599"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -309,8 +373,8 @@
 <arg>name=username</arg>
 <arg>593021274-1</arg>
 </arguments>
-<msg timestamp="20190402 21:38:54.950" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:55.154" starttime="20190402 21:38:54.949"></status>
+<msg timestamp="20190402 21:57:10.782" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:10.950" starttime="20190402 21:57:10.781"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -318,16 +382,16 @@
 <arg>name=password</arg>
 <arg>khntibjtkfy</arg>
 </arguments>
-<msg timestamp="20190402 21:38:55.156" level="INFO">Typing text 'khntibjtkfy' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:55.314" starttime="20190402 21:38:55.155"></status>
+<msg timestamp="20190402 21:57:10.952" level="INFO">Typing text 'khntibjtkfy' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.112" starttime="20190402 21:57:10.951"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:55.316" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:55.514" starttime="20190402 21:38:55.315"></status>
+<msg timestamp="20190402 21:57:11.115" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.287" starttime="20190402 21:57:11.114"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -335,8 +399,8 @@
 <arg>name=username</arg>
 <arg>593021274-1</arg>
 </arguments>
-<msg timestamp="20190402 21:38:55.515" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:55.697" starttime="20190402 21:38:55.515"></status>
+<msg timestamp="20190402 21:57:11.290" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.455" starttime="20190402 21:57:11.289"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -344,16 +408,16 @@
 <arg>name=password</arg>
 <arg>nbj,fngkdh</arg>
 </arguments>
-<msg timestamp="20190402 21:38:55.699" level="INFO">Typing text 'nbj,fngkdh' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:55.845" starttime="20190402 21:38:55.698"></status>
+<msg timestamp="20190402 21:57:11.457" level="INFO">Typing text 'nbj,fngkdh' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.590" starttime="20190402 21:57:11.457"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:55.846" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.034" starttime="20190402 21:38:55.846"></status>
+<msg timestamp="20190402 21:57:11.591" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.734" starttime="20190402 21:57:11.591"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -361,8 +425,8 @@
 <arg>name=username</arg>
 <arg>593021274-1</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.043" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.229" starttime="20190402 21:38:56.042"></status>
+<msg timestamp="20190402 21:57:11.736" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 21:57:11.907" starttime="20190402 21:57:11.735"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -370,52 +434,52 @@
 <arg>name=password</arg>
 <arg>meytawut274-1</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.230" level="INFO">Typing text 'meytawut274-1' into text field 'name=password'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.431" starttime="20190402 21:38:56.230"></status>
+<msg timestamp="20190402 21:57:11.908" level="INFO">Typing text 'meytawut274-1' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.060" starttime="20190402 21:57:11.908"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.432" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.590" starttime="20190402 21:38:56.431"></status>
+<msg timestamp="20190402 21:57:12.063" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.208" starttime="20190402 21:57:12.062"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Failed, after you have made</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.630" level="INFO">Current page contains text 'Failed, after you have made'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.630" starttime="20190402 21:38:56.591"></status>
+<msg timestamp="20190402 21:57:12.241" level="INFO">Current page contains text 'Failed, after you have made'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.241" starttime="20190402 21:57:12.209"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>3 unsuccessful attempts</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.666" level="INFO">Current page contains text '3 unsuccessful attempts'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.667" starttime="20190402 21:38:56.631"></status>
+<msg timestamp="20190402 21:57:12.267" level="INFO">Current page contains text '3 unsuccessful attempts'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.267" starttime="20190402 21:57:12.242"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>your account is restricted!!</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.702" level="INFO">Current page contains text 'your account is restricted!!'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.702" starttime="20190402 21:38:56.668"></status>
+<msg timestamp="20190402 21:57:12.291" level="INFO">Current page contains text 'your account is restricted!!'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.292" starttime="20190402 21:57:12.268"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>, please contact support.</arg>
 </arguments>
-<msg timestamp="20190402 21:38:56.728" level="INFO">Current page contains text ', please contact support.'.</msg>
-<status status="PASS" endtime="20190402 21:38:56.728" starttime="20190402 21:38:56.704"></status>
+<msg timestamp="20190402 21:57:12.319" level="INFO">Current page contains text ', please contact support.'.</msg>
+<status status="PASS" endtime="20190402 21:57:12.319" starttime="20190402 21:57:12.294"></status>
 </kw>
-<status status="PASS" endtime="20190402 21:38:56.729" critical="yes" starttime="20190402 21:38:54.328"></status>
+<status status="PASS" endtime="20190402 21:57:12.320" critical="yes" starttime="20190402 21:57:10.209"></status>
 </test>
-<status status="PASS" endtime="20190402 21:38:56.733" starttime="20190402 21:38:47.633"></status>
+<status status="PASS" endtime="20190402 21:57:12.324" starttime="20190402 21:56:54.864"></status>
 </suite>
 <statistics>
 <total>
