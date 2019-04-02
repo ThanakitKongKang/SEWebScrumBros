@@ -21,5 +21,7 @@ Success Login TA :
     Input Text    name=password    meytawut274-1
     Click Button    login-button
     Location Should Be    ${HOMEPAGE}
+    Page Should Contain    นายเมธวัฒน์ จงใจภักดิ์
+
 
 

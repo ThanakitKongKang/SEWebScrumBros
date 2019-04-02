@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190402 20:32:36.110" generator="Robot 3.1.1 (Python 2.7.16 on win32)">
+<suite source="C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\ts01.robot" id="s1" name="Ts01">
+<test id="s1-t1" name="Success Login Teacher :">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${LOGINHOMEPAGE}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:38.427" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 20:32:43.849" starttime="20190402 20:32:38.426"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${LOGINHOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:43.893" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 20:32:43.893" starttime="20190402 20:32:43.851"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=username</arg>
+<arg>chitsutha</arg>
+</arguments>
+<msg timestamp="20190402 20:32:43.897" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 20:32:44.167" starttime="20190402 20:32:43.897"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=password</arg>
+<arg>chitsuthakku2019</arg>
+</arguments>
+<msg timestamp="20190402 20:32:44.170" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 20:32:44.440" starttime="20190402 20:32:44.168"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20190402 20:32:44.442" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 20:32:44.942" starttime="20190402 20:32:44.441"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:44.957" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'.</msg>
+<status status="PASS" endtime="20190402 20:32:44.958" starttime="20190402 20:32:44.946"></status>
+</kw>
+<status status="PASS" endtime="20190402 20:32:44.959" critical="yes" starttime="20190402 20:32:38.425"></status>
+</test>
+<test id="s1-t2" name="Success Login TA :">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGINHOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:44.975" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<status status="PASS" endtime="20190402 20:32:45.073" starttime="20190402 20:32:44.974"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${LOGINHOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:45.085" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" endtime="20190402 20:32:45.085" starttime="20190402 20:32:45.074"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=username</arg>
+<arg>593021274-1</arg>
+</arguments>
+<msg timestamp="20190402 20:32:45.087" level="INFO">Typing text '593021274-1' into text field 'name=username'.</msg>
+<status status="PASS" endtime="20190402 20:32:45.292" starttime="20190402 20:32:45.086"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=password</arg>
+<arg>meytawut274-1</arg>
+</arguments>
+<msg timestamp="20190402 20:32:45.296" level="INFO">Typing text 'meytawut274-1' into text field 'name=password'.</msg>
+<status status="PASS" endtime="20190402 20:32:45.480" starttime="20190402 20:32:45.294"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20190402 20:32:45.482" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20190402 20:32:45.716" starttime="20190402 20:32:45.481"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190402 20:32:45.730" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'.</msg>
+<status status="PASS" endtime="20190402 20:32:45.730" starttime="20190402 20:32:45.718"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>"นายเมธวัฒน์ จงใจภักดิ์"</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190402 20:32:46.215" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190402 20:32:46.215" starttime="20190402 20:32:45.869"></status>
+</kw>
+<msg timestamp="20190402 20:32:46.251" level="FAIL">Page should have contained text '"นายเมธวัฒน์ จงใจภักดิ์"' but did not.</msg>
+<status status="FAIL" endtime="20190402 20:32:46.251" starttime="20190402 20:32:45.736"></status>
+</kw>
+<status status="FAIL" endtime="20190402 20:32:46.252" critical="yes" starttime="20190402 20:32:44.966">Page should have contained text '"นายเมธวัฒน์ จงใจภักดิ์"' but did not.</status>
+</test>
+<status status="FAIL" endtime="20190402 20:32:46.258" starttime="20190402 20:32:36.116"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Ts01" pass="1">Ts01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190402 20:32:36.023" level="WARN">Error in file 'C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\ts01.robot': Section name 'TestCase' is deprecated. Use 'Test Case' instead.</msg>
+</errors>
+</robot>
