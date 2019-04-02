@@ -3,9 +3,9 @@
         ?>
 
     <div class="alert alert-danger shadow-sm p-3 mb-5 rounded">
-        <div class="container text-center">ไม่สำเร็จ ท่านกรอกชื่อหรือรหัสผ่าน
-            <span class='text-danger'>ไม่ถูกต้อง ครบ 3 ครั้ง</span>
-            <br><span class='text-danger'>บัญชีของท่านถูกล็อก</span> กรุณาติดต่อเจ้าหน้าที่
+        <div class="container text-center">Failed, after you have made 
+            <span class='text-danger'>3 unsuccessful attempts</span>
+            <br><span class='text-danger'>your account is restricted!!</span>, please contact support.
         </div>
 
     </div>
