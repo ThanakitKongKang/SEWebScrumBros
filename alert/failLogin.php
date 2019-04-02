@@ -3,8 +3,8 @@
         ?>
 
     <div class="alert alert-danger shadow-sm p-3 mb-5 rounded">
-        <div class="container text-center">Failed, username or password is
-            <span class='text-danger'>incorrect </span>
+        <div class="container text-center">Failed, password is
+            <span class='text-danger'>incorrect. </span>
             <br>you have <strong><?= $_SESSION["failedLogin"] ?> </strong> chances, then <span class='text-danger'>your account will be restricted</span>
         </div>
 
