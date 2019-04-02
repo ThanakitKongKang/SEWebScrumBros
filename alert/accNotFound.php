@@ -4,8 +4,8 @@
         ?>
 
     <div class="alert alert-danger shadow-sm p-3 mb-5 rounded">
-        <div class="container text-center">ไม่สำเร็จ ชื่อหรือรหัสผ่านที่คุณป้อน
-            <span class='text-danger font-weight-bold'>ไม่ตรงกับบัญชีผู้ใช้ใดๆ</span>
+        <div class="container text-center">Failed, 
+            <span class='text-danger font-weight-bold'>User not found.</span>
         </div>
 
     </div>
