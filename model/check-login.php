@@ -27,9 +27,11 @@ if (!empty($row[0])) {
       $_SESSION["email"] = $row["email"];
       $_SESSION["role"] = $row["role"];
       $_SESSION["successLogin"] = true;
-      // แสดง link เพื่อไปยังหน้าต่อไปหลังจากตรวจสอบสำเร็จแล้ว
-      // กรณี username และ password ไม่ตรงกัน
 
+      //อัพเดทค่า count_CheckLogin ให้ = 0 เมื่อล็อกอินผ่าน
+      $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = 0 WHERE username = ?");
+      $stmt->bindParam(1, $_POST["username"]);
+      $stmt->execute();
       header('location:../home.php');
       ?>
 <?php 
@@ -55,8 +57,7 @@ else {
   $_SESSION["accountLocked"] = true;
   header('location:../login.php');
 }
-}
-else{
+} else {
   $_SESSION["accNotFound"] = true;
   header('location:../login.php');
 }
