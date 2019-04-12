@@ -2,5 +2,6 @@ RewriteEngine On
 
 RewriteRule ^home?$ home.php
 RewriteRule ^login?$ login.php
+RewriteRule ^/$ login.php
 
-RewriteRule ^subject/([0-9]+)/([0-9]+)/([0-9]+) subject.php?subjectCode=$1&year=$2&semester=$3
+RewriteRule ^class/(.*)/([0-9]+)/([0-9]+) class.php?subjectCode=$1&year=$2&semester=$3

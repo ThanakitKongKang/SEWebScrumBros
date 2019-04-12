@@ -3,7 +3,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/SEWebScrumBros/head.php";
 include_once($path);
 //ใช้แล้วเซ็ตค่า path คืน
-$path = $_SERVER['DOCUMENT_ROOT'];
+
 ?>
 
 <head>
@@ -13,20 +13,22 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 <body>
     <?php if (!empty($_SESSION["username"])) { ?>
     <?php include('header.php'); ?>
-    <?php include('./alert/successLogin.php'); ?>
+    <?php include('alert/successLogin.php'); ?>
 
-
+    <?php include('nav/nav-home.php'); ?>
     <div class="container mt-3">
-
+  
 
         <div class="row">
             <?php 
+            $path = $_SERVER['DOCUMENT_ROOT'];
             $path .= "/SEWebScrumBros/model/getClassOfUser.php";
             include_once($path);
+            
 
             while ($row = $stmt->fetch()) {
                 ?>
-            <a href="subject/<?= $row['subject_code'] ?>/<?= $row['year'] ?>/<?= $row['Semester'] ?>" style="text-decoration: none;">
+            <a href="class/<?= $row['subject_code'] ?>/<?= $row['year'] ?>/<?= $row['Semester'] ?>" style="text-decoration: none;">
                 <div class="col-4">
 
                     <div class="card m-3">

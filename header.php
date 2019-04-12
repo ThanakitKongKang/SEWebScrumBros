@@ -10,7 +10,7 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item active">
-                <a class="nav-link" href="/SEWebScrumBros/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/SEWebScrumBros/home"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
             </li>
             <!--
             <li class="nav-item">
@@ -32,16 +32,16 @@
             </li>
             -->
         </ul>
-        <!--
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        
+        <form class="form-inline my-2 my-lg-0 mr-auto">
+            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
-          -->
+         
 
         <?php if (!empty($_SESSION["firstName"])) { ?>
         <span class="navbar-text fsize text-primary"><?= $_SESSION["firstName"]," ",$_SESSION["lastName"] ?> </span>
-        <a href="/SEWebScrumBros/logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">ออกจากระบบ</button></a>
+        <a href="/SEWebScrumBros/logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">Logout <i class="fas fa-sign-out-alt"></i></button></a>
 
         <?php 
     } ?>
