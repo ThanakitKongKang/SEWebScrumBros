@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="home.php">ScrumBros</a>
+    <a class="navbar-brand" href="/SEWebScrumBros/home">ScrumBros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +41,7 @@
 
         <?php if (!empty($_SESSION["firstName"])) { ?>
         <span class="navbar-text fsize text-primary"><?= $_SESSION["firstName"]," ",$_SESSION["lastName"] ?> </span>
-        <a href="logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">ออกจากระบบ</button></a>
+        <a href="/SEWebScrumBros/logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">ออกจากระบบ</button></a>
 
         <?php 
     } ?>
