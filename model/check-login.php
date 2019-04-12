@@ -7,8 +7,6 @@ $stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
 $stmt->bindParam(1, $_POST["username"]);
 $stmt->execute();
 $row = $stmt->fetch();
-//เช็คว่ามี username นี้ในระบบไหม
-if (!empty($row[0])) {
   //เช็คว่าบัญชีถูกล็อกหรือยัง
   if ($row["count_CheckLogin"] < 3) {
     $stmt = $pdo->prepare("SELECT * FROM user_info LEFT JOIN user_role ON user_info.UID = user_role.UID WHERE username = ? AND password = ?");
@@ -58,8 +56,5 @@ else {
   $_SESSION["accountLocked"] = true;
   header('location:../login');
 }
-} else {
-  $_SESSION["accNotFound"] = true;
-  header('location:../login');
-}
+
 ?> 

@@ -26,14 +26,13 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 
             while ($row = $stmt->fetch()) {
                 ?>
-
             <a href="subject/<?= $row['subject_code'] ?>/<?= $row['year'] ?>/<?= $row['Semester'] ?>" style="text-decoration: none;">
                 <div class="col-4">
 
                     <div class="card m-3">
 
                         <div class="card-body col border border-primary" style="min-height:250px">
-                            <span <?php if ($row["role"] == 'ผู้ช่วยอาจารย์')
+                            <span <?php if ($row["role"] == 'ผู้ช่วยสอน')
                                         echo "class='text-success '";
                                     else
                                         echo "class='text-info'"; ?> style="font-size:0.8em;float:right;">(<?= $row["role"] ?>)</span>
