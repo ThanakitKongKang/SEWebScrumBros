@@ -11,5 +11,5 @@ setcookie(
     $params["httponly"]
 );
 session_destroy(); // ทำลาย session
-header("location:login.php");
+header("location:login");
 ?>

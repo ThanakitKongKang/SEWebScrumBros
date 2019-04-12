@@ -33,7 +33,7 @@ if (!empty($row[0])) {
       $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = 0 WHERE username = ?");
       $stmt->bindParam(1, $_POST["username"]);
       $stmt->execute();
-      header('location:../home.php');
+      header('location:../home');
       ?>
 <?php 
 } else {
@@ -50,16 +50,16 @@ if (!empty($row[0])) {
   if ($row["count_CheckLogin"] == 3) {
     $_SESSION["accountLocked"] = true;
   }
-  header('location:../login.php');
+  header('location:../login');
 }
 }
 //กรณีบัญชีถูกล็อก
 else {
   $_SESSION["accountLocked"] = true;
-  header('location:../login.php');
+  header('location:../login');
 }
 } else {
   $_SESSION["accNotFound"] = true;
-  header('location:../login.php');
+  header('location:../login');
 }
 ?> 
