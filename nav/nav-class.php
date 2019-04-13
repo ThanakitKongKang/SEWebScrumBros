@@ -1,7 +1,7 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/SoftEn2019/Sec2/ScrumBros/model/getUserRole.php";
-include_once($path);
+include($path);
 ?>
 
 <head>
@@ -13,7 +13,20 @@ include_once($path);
   </style>
 </head>
 
-<?php if ($isStudent == 'true') { ?>
+<?php
+//ถ้าเป็นคลาสที่ผู้ใช้คนที่ล็อกอินอยู่เป็น Student จะขึ้นเมนูให้
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/SoftEn2019/Sec2/ScrumBros/model/getTAInClass.php";
+include($path);
+
+$isThisStudentInClass = 'false';
+while ($row = $stmt->fetch()) {
+  if ($row['UID'] == $_SESSION['UID']) {
+    $isThisStudentInClass = 'true';
+  }
+}
+
+if ($isStudent == 'true') { ?>
   <nav class="nav flex-column shadow-sm p-3 mb-5 bg-white rounded" style="position:fixed;left:5rem;top:7.5rem;border:.1rem solid #dadce0;width:15rem;">
     <table>
       <tr>
@@ -22,24 +35,28 @@ include_once($path);
           <h6 class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Student</h6>
         </td>
       </tr>
-      <tr>
-        <td class="icon"><i class="fas fa-info"></i></td>
-        <td>
-          <a class="nav-link" href="#">Status check</a>
-        </td>
-      </tr>
+      <?php if ($isThisStudentInClass == 'true') { ?>
+        <tr>
+          <td class="icon"><i class="fas fa-info"></i></td>
+          <td>
+            <a class="nav-link" href="#">Status check</a>
+          </td>
+        </tr>
+      <?php } ?>
       <tr>
         <td class="icon"><i class="fas fa-sign-in-alt"></i></td>
         <td>
           <a class="nav-link" href="#">Join Class</a>
         </td>
       </tr>
+
       <tr>
         <td class="icon"><i class="fas fa-flag"></i></td>
         <td>
           <a class="nav-link" href="#">Report Mistake</a>
         </td>
       </tr>
+
     </table>
 
   </nav>
@@ -97,7 +114,20 @@ if ($isThisTAInClass == 'true') { ?>
 }
 ?>
 
-<?php if ($isTeacher == 'true') { ?>
+<?php
+//ถ้าเป็นคลาสที่ผู้ใช้คนที่ล็อกอินอยู่เป็น Teacher จะขึ้นเมนูให้
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/SoftEn2019/Sec2/ScrumBros/model/getTeacherInClass.php";
+include($path);
+
+$isThisTeacherInClass = 'false';
+while ($row = $stmt->fetch()) {
+  if ($row['UID'] == $_SESSION['UID']) {
+    $isThisTeacherInClass = 'true';
+  }
+}
+
+if ($isThisTeacherInClass == 'true') { ?>
   <nav class="nav flex-column shadow-sm p-3 mb-5 bg-white rounded" style="position:fixed;left:5rem;top:7.5rem;border:.1rem solid #dadce0;width:15rem;">
     <table>
       <tr>

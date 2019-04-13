@@ -42,7 +42,7 @@ include_once($path);
                         <?php
                         $path = $_SERVER['DOCUMENT_ROOT'];
                         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getTeacherInClass.php";
-                        include_once($path);
+                        include($path);
 
                         $i = 0;
                         while ($row = $stmt->fetch()) {
@@ -87,7 +87,7 @@ include_once($path);
                         <?php
                         $path = $_SERVER['DOCUMENT_ROOT'];
                         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getStudentInClass.php";
-                        include_once($path);
+                        include($path);
                         $i = 0;
                         while ($row = $stmt->fetch()) {
                             if ($stmt->rowCount() > 0 && $i == 0) {

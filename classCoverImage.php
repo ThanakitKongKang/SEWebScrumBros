@@ -1,7 +1,7 @@
 <?php
             $path = $_SERVER['DOCUMENT_ROOT'];
             $path .= "/SoftEn2019/Sec2/ScrumBros/model/getSubject.php";
-            include_once($path);
+            include($path);
             while ($row = $stmt->fetch()) {
                 ?>
                 <a href="class.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>" style="text-decoration:none">
