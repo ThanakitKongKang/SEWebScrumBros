@@ -25,7 +25,7 @@ include_once($path);
       <tr>
         <td class="icon"><i class="fas fa-info"></i></td>
         <td>
-          <a class="nav-link" href="#">Check Current Status</a>
+          <a class="nav-link" href="#">Status check</a>
         </td>
       </tr>
       <tr>
