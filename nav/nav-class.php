@@ -145,7 +145,7 @@ if ($isThisTeacherInClass == 'true') { ?>
       <tr>
         <td class="icon"><i class="fas fa-table"></i></td>
         <td>
-          <a class="nav-link" href="summary.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>">Summary</a>
+          <a class="nav-link" href="summary.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>&section=<?= $_GET['section'] ?>">Summary</a>
         </td>
       </tr>
       <tr>

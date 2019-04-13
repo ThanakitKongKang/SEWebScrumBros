@@ -28,7 +28,7 @@ include_once($path);
 
                 while ($row = $stmt->fetch()) {
                     ?>
-                    <a href="class.php?subjectCode=<?= $row['subject_code'] ?>&year=<?= $row['year'] ?>&semester=<?= $row['Semester'] ?>" style="text-decoration: none;">
+                    <a href="class.php?subjectCode=<?= $row['subject_code'] ?>&year=<?= $row['year'] ?>&semester=<?= $row['Semester'] ?>&section=<?= $row['section'] ?>" style="text-decoration: none;">
                         <div class="col-4">
 
                             <div class="card m-3">

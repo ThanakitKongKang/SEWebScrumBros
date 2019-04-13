@@ -7,12 +7,12 @@ include_once($path);
 ?>
 
 <head>
-    <title>Summary of <?= $_GET['subjectCode'] . " " . "(" . $_GET["semester"] . "/" . $_GET['year'] . ")" ?></title>
+    <title>Summary of <?= $_GET['subjectCode'] . " sec.".$_GET['section'] . " (" . $_GET["semester"] . "/" . $_GET['year'] . ")" ?></title>
 </head>
 
 <body>
     <?php
-    if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester'])) {
+    if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester'])&& isset($_GET['section'])) {
         if ($_SESSION['role'] == 'อาจารย์') {
             ?>
             <?php include('header.php'); ?>

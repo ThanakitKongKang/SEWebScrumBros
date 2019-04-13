@@ -7,7 +7,7 @@ include_once($path);
 ?>
 
 <head>
-    <title><?= $_GET['subjectCode'] . " " . "(" . $_GET["semester"] . "/" . $_GET['year'] . ")" ?></title>
+    <title><?= $_GET['subjectCode'] . " sec.".$_GET['section'] . " (" . $_GET["semester"] . "/" . $_GET['year'] . ")" ?></title>
     <script>
         $(document).ready(function() {
             $('#classStudent').DataTable();
@@ -16,7 +16,7 @@ include_once($path);
 </head>
 
 <body>
-    <?php if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester'])) { ?>
+    <?php if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester'])&& isset($_GET['section'])) { ?>
         <?php include('header.php'); ?>
 
         <?php include('nav/nav-class.php'); ?>
