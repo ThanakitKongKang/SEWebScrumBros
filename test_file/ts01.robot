@@ -2,8 +2,8 @@
 Library    Selenium2Library
 
 *** Variable ***
-${LOGINHOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php
-${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php
+${LOGINHOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php
+${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/home.php
 ${BROWSER}    Chrome
 
 *** Test Case ***

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/SEWebScrumBros/home">ScrumBros</a>
+    <a class="navbar-brand" href="/SoftEn2019/Sec2/ScrumBros/home.php">ScrumBros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,7 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item active">
-                <a class="nav-link" href="/SEWebScrumBros/home"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/SoftEn2019/Sec2/ScrumBros/home.php"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
             </li>
             <!--
             <li class="nav-item">
@@ -41,7 +41,7 @@
 
         <?php if (!empty($_SESSION["firstName"])) { ?>
         <span class="navbar-text fsize text-primary"><?= $_SESSION["firstName"]," ",$_SESSION["lastName"] ?> </span>
-        <a href="/SEWebScrumBros/logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">Logout <i class="fas fa-sign-out-alt"></i></button></a>
+        <a href="/SoftEn2019/Sec2/ScrumBros/logout.php"><button class="btn btn-danger mx-3" type="button" name="logout">Logout <i class="fas fa-sign-out-alt"></i></button></a>
 
         <?php 
     } ?>

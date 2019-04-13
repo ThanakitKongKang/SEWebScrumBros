@@ -14,8 +14,7 @@ $connect->query("SET NAMES utf8");
 
 try {
 	//connect local
-	$pdo = new
-		PDO("mysql:host=localhost;dbname=19s2_g7;charset=utf8", "root", "");
+	$pdo = new PDO("mysql:host=localhost;dbname=19s2_g7;charset=utf8", "root", "");
 
 	//connect server
 	//$pdo = new PDO("mysql:host=10.199.66.227;dbname=19s2_g7;charset=utf8","19S2_g7","mhnx6BnY");

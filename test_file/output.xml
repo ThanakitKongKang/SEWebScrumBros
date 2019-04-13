@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot rpa="false" generated="20190402 21:56:54.860" generator="Robot 3.1.1 (Python 2.7.16 on win32)">
-<suite source="C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\ts02.robot" id="s1" name="Ts02">
+<suite source="C:\Users\Kalyte\Desktop\SE Project\ScrumBros\test_file\ts02.robot" id="s1" name="Ts02">
 <test id="s1-t1" name="TC01(Empty password)">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -8,7 +8,7 @@
 <arg>${LOGINPAGE}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190402 21:56:58.691" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:56:58.691" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:07.267" starttime="20190402 21:56:58.691"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
@@ -16,7 +16,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:07.293" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:07.293" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:07.293" starttime="20190402 21:57:07.268"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
@@ -41,7 +41,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:07.898" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:07.898" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:07.898" starttime="20190402 21:57:07.891"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
@@ -100,7 +100,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:08.133" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<msg timestamp="20190402 21:57:08.133" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
 <status status="PASS" endtime="20190402 21:57:08.241" starttime="20190402 21:57:08.132"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
@@ -108,7 +108,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:08.264" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:08.264" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:08.265" starttime="20190402 21:57:08.251"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
@@ -133,7 +133,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:08.643" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:08.643" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:08.644" starttime="20190402 21:57:08.634"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
@@ -160,7 +160,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:08.722" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<msg timestamp="20190402 21:57:08.722" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
 <status status="PASS" endtime="20190402 21:57:08.803" starttime="20190402 21:57:08.721"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
@@ -168,7 +168,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:08.813" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:08.813" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:08.813" starttime="20190402 21:57:08.804"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
@@ -202,7 +202,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:09.357" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:09.357" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:09.357" starttime="20190402 21:57:09.350"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
@@ -229,7 +229,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:09.399" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<msg timestamp="20190402 21:57:09.399" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
 <status status="PASS" endtime="20190402 21:57:09.485" starttime="20190402 21:57:09.398"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
@@ -237,7 +237,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:09.515" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:09.515" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:09.516" starttime="20190402 21:57:09.490"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
@@ -271,7 +271,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:10.097" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:10.097" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:10.097" starttime="20190402 21:57:10.088"></status>
 </kw>
 <kw name="Page Should Contain" library="Selenium2Library">
@@ -330,7 +330,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:10.211" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
+<msg timestamp="20190402 21:57:10.211" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'</msg>
 <status status="PASS" endtime="20190402 21:57:10.272" starttime="20190402 21:57:10.211"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
@@ -338,7 +338,7 @@
 <arguments>
 <arg>${LOGINPAGE}</arg>
 </arguments>
-<msg timestamp="20190402 21:57:10.287" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<msg timestamp="20190402 21:57:10.287" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
 <status status="PASS" endtime="20190402 21:57:10.287" starttime="20190402 21:57:10.274"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">

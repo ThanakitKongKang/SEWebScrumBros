@@ -31,7 +31,7 @@ $row = $stmt->fetch();
       $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = 0 WHERE username = ?");
       $stmt->bindParam(1, $_POST["username"]);
       $stmt->execute();
-      header('location:../home');
+      header('location:../home.php');
       ?>
 <?php 
 } else {
@@ -48,13 +48,13 @@ $row = $stmt->fetch();
   if ($row["count_CheckLogin"] == 3) {
     $_SESSION["accountLocked"] = true;
   }
-  header('location:../login');
+  header('location:../login.php');
 }
 }
 //กรณีบัญชีถูกล็อก
 else {
   $_SESSION["accountLocked"] = true;
-  header('location:../login');
+  header('location:../login.php');
 }
 
 ?> 
