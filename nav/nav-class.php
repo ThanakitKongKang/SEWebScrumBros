@@ -46,7 +46,19 @@ include_once($path);
 <?php
 } ?>
 
-<?php if ($isTA == 'true') { ?>
+<?php
+//ถ้าเป็นคลาสที่ผู้ใช้คนที่ล็อกอินอยู่เป็น TA จะขึ้นเมนูให้
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/SoftEn2019/Sec2/ScrumBros/model/getTAInClass.php";
+include($path);
+
+$isThisTAInClass = 'false';
+while ($row = $stmt->fetch()) {
+  if ($row['UID'] == $_SESSION['UID']) {
+    $isThisTAInClass = 'true';
+  }
+}
+if ($isThisTAInClass == 'true') { ?>
   <nav class="nav flex-column shadow-sm p-3 mb-5 bg-white rounded" style="position:fixed;left:5rem;top:22rem;border:.1rem solid #dadce0;width:15rem;">
     <table>
       <tr>
@@ -87,7 +99,7 @@ include_once($path);
 
 <?php if ($isTeacher == 'true') { ?>
   <nav class="nav flex-column shadow-sm p-3 mb-5 bg-white rounded" style="position:fixed;left:5rem;top:7.5rem;border:.1rem solid #dadce0;width:15rem;">
-  <table>
+    <table>
       <tr>
         <td class="icon"><i class="fas fa-chalkboard-teacher"></i></td>
         <td>
@@ -103,21 +115,21 @@ include_once($path);
       <tr>
         <td class="icon"><i class="fas fa-table"></i></td>
         <td>
-        <a class="nav-link" href="#">Summary</a>
+          <a class="nav-link" href="summary.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>">Summary</a>
         </td>
       </tr>
       <tr>
         <td class="icon"><i class="fas fa-edit"></i></td>
         <td>
-        <a class="nav-link" href="#">Edit class</a>
+          <a class="nav-link" href="#">Edit class</a>
         </td>
       </tr>
     </table>
 
-    
-    
-    
-    
+
+
+
+
 
   </nav>
 <?php
