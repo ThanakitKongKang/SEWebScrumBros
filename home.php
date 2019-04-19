@@ -41,6 +41,7 @@ include_once($path);
                                     <h4 class="text-primary clearfix"><?= $row["subjectName_Th"] ?></h4>
                                     <span class="text-muted mb-3"><?= $row["subjectName_En"] ?></span>
                                     <p class="card-text my-3"><?= $row["subject_code"] ?> | ปีการศึกษา <?= $row["year"] ?> | เทอม <?= $row["Semester"] ?> </p>
+                                    <p>section : <?=$row["section"]?></p>
 
                                 </div>
 

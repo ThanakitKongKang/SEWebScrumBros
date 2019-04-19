@@ -94,11 +94,16 @@ include_once($path);
                                 echo ' 
                                 <thead><tr>
                                 <th>รหัสนักศึกษา</th>
-                                <th>ชื่อ - สกุล</th></tr></thead><tbody>';
+                                <th>ชื่อ - สกุล</th>
+                                <th>ชั้นปี</th>
+                                <th>สาขา</th>
+                                </tr></thead><tbody>';
                             }
                             echo '<tr>
                                 <td>' . $row['stdId'] . '</td>
                                 <td>' . $row['firstName'] . ' ' . $row['lastName'] . '</td>
+                                <td>' . $row['Year'] . '</td>
+                                <td>' . $row['Branch'] . '</td>
                                 </tr>';
                             $i++;
                         } ?>
