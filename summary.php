@@ -35,13 +35,21 @@ include_once($path);
                     ?>
 
 
-                    <select required class="custom-select" id="selectDate">
+                    <select required id="date" class="custom-select" id="selectDate" onchange="attendanceStatus(this.value);">
 
                         <option selected value="">โปรดเลือก..</option>
                         <?php
                         $i = 1;
                         while ($row = $stmt->fetch()) {
-                            ?> <option value="<?= $row['dayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
+                            ?>
+
+                            <option <?php
+                                    if (isset($_GET['date']) && $_GET['date'] == $row['dayCheckName']) {
+                                        echo "selected";
+                                    }
+
+                                    ?> value="<?= $row['dayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
+
                             <?php
                             $i++;
                         }
@@ -51,7 +59,13 @@ include_once($path);
 
                 </div>
 
-
+                <div>
+                    <?php if (isset($_GET['date'])) {
+                       //แสดงปุ่ม
+                        
+                    }
+                    ?>
+                </div>
 
             </div>
 
@@ -71,6 +85,28 @@ include('inClassErrorHandling.php');
     $(function() {
         $('select').selectpicker();
     });
+
+    function attendanceStatus(date) {
+        var date = $('#date').val();
+        var parts = window.location.search.substr(1).split("&");
+        var $_GET = {};
+        for (var i = 0; i < parts.length; i++) {
+            var temp = parts[i].split("=");
+            $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+        }
+        var go = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
+                $_GET['subjectCode'] +
+                "&year=" + $_GET['year'] +
+                "&semester=" + $_GET['semester'] +
+                "&section=" + $_GET['section'];
+        $.ajax({
+            type: "GET",
+            data: "date=" + date,
+            success: function(result) {
+                window.location.href = go + "&date=" + date;
+            }
+        });
+    };
 </script>
 
 </html>
