@@ -15,6 +15,7 @@
                                 <div style="font-size:1.5rem;font-weight:400;line-height:2rem;color:#fff">section : <?=$row["section"]?></div>
                                 <div style="font-size:1.5rem;font-weight:400;line-height:2rem;color:#fff"><?="ภาคการศึกษาที่ " . $row["Semester"] . " ปีการศึกษา " . $row['year'] ?></div>
                             </div>
+                            <?php $subject_id = $row['subject_id'];?>
                         </div>
                     </div>
                 </a>

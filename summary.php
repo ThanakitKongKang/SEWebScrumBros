@@ -17,20 +17,38 @@ include_once($path);
         if ($_SESSION['role'] == 'อาจารย์') {
             ?>
             <?php include('header.php'); ?>
-            <?php include('nav/nav-class.php'); ?>
+            <?php include('nav/nav-class.php');
+            ?>
 
             <div class="container mt-3">
                 <?php include('classCoverImage.php'); ?>
-                <div class="input-group mb-3">
+
+                <div class="input-group my-3" style="width:20rem">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        <label class="input-group-text" for="selectDate">เลือกวันที่เรียน</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <?php
+
+                    $path = $_SERVER['DOCUMENT_ROOT'];
+                    $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAttendDateBySubjectID.php";
+                    include($path);
+                    ?>
+
+
+                    <select required class="custom-select" id="selectDate">
+
+                        <option selected value="">โปรดเลือก..</option>
+                        <?php
+                        $i = 1;
+                        while ($row = $stmt->fetch()) {
+                            ?> <option value="<?= $row['dayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
+                            <?php
+                            $i++;
+                        }
+                        ?>
                     </select>
+
+
                 </div>
 
 
