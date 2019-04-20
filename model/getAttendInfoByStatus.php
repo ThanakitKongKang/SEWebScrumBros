@@ -8,5 +8,5 @@ WHERE dayCheckName = ?
 AND attendanceStatus=?
 ORDER BY stdId");
 $stmt->bindParam(1, $_GET['date']);
-$stmt->bindParam(1, $$_GET['attendanceStatus']);
+$stmt->bindParam(2, $_GET['attendanceStatus']);
 $stmt->execute(); ?>
