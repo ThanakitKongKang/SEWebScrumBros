@@ -1,4 +1,5 @@
 <?php
+function getAttendInfoPresent(){
 $stmt = $pdo->prepare("SELECT
 idAttend,
 DATE_FORMAT(dayCheckName,'%d/%m/%Y') AS dayCheckName,
@@ -9,4 +10,9 @@ AND attendanceStatus=?
 ORDER BY stdId");
 $stmt->bindParam(1, $_GET['date']);
 $stmt->bindParam(1, $$_GET['attendanceStatus']);
-$stmt->execute(); ?>
+$stmt->execute(); 
+}
+
+
+
+?>

@@ -70,18 +70,21 @@ include_once($path);
                         <div class="row">
                             <div class="col mx-1">
                                 <div class="present">
-                                    <div class="frontPresent">จำนวนมาเรียน</div>
-                                  
+                                    <div class="frontPresent">//จำนวนมาเรียน</div>
+                                    <input type="hidden" id="attendanceStatus" value="มา">
+
                                 </div>
                             </div>
                             <div class="col mx-1">
                                 <div class="absent">
-                                    <div class="frontAbsent">จำนวนขาด</div>
+                                    <div class="frontAbsent">//จำนวนขาด</div>
+                                    <input type="hidden" id="attendanceStatus" value="ขาด">
                                 </div>
                             </div>
                             <div class="col mx-1">
                                 <div class="leave">
-                                    <div class="frontLeave">จำนวนลา</div>
+                                    <div class="frontLeave">//จำนวนลา</div>
+                                    <input type="hidden" id="attendanceStatus" value="ลา">
 
                                 </div>
                             </div>
@@ -132,15 +135,7 @@ include('inClassErrorHandling.php');
             }
         });
     };
-    $('.present').on('click', function() {
-        $('.present').toggleClass('presentFlipped');
-    });
-    $('.absent').on('click', function() {
-        $('.absent').toggleClass('absentFlipped');
-    });
-    $('.leave').on('click', function() {
-        $('.leave').toggleClass('leaveFlipped');
-    });
 </script>
+<script type="text/javascript" src="js/card.js"></script>
 
 </html>
