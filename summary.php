@@ -17,8 +17,8 @@ include_once($path);
         if ($_SESSION['role'] == 'อาจารย์') {
             ?>
             <?php include('header.php'); ?>
-         
-            
+
+
 
             <div class="container mt-3">
                 <?php include('classCoverImage.php'); ?>
@@ -38,6 +38,9 @@ include_once($path);
                     <select required id="date" class="custom-select" id="selectDate" onchange="attendanceStatus(this.value);">
 
                         <option selected value="">โปรดเลือก..</option>
+                        <option <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
+                                    echo "selected";
+                                } ?> value="summaryAllDate">ข้อมูลโดยรวมทุกคาบ</option>
                         <?php
                         $i = 1;
                         while ($row = $stmt->fetch()) {
