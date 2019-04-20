@@ -38,7 +38,7 @@ include_once($path);
 
                     <select required id="date" class="custom-select" id="selectDate" onchange="attendanceStatus(this.value);">
 
-                        <option selected value="">โปรดเลือก..</option>
+                        <option selected value="" disabled>โปรดเลือก..</option>
                         <option <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
                                     echo "selected";
                                 } ?> value="summaryAllDate">ข้อมูลโดยรวมทุกคาบ</option>
@@ -48,11 +48,11 @@ include_once($path);
                             ?>
 
                             <option <?php
-                                    if (isset($_GET['date']) && $_GET['date'] == $row['dayCheckName']) {
+                                    if (isset($_GET['date']) && $_GET['date'] == $row['sqlformatDayCheckName']) {
                                         echo "selected";
                                     }
 
-                                    ?> value="<?= $row['dayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
+                                    ?> value="<?= $row['sqlformatDayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
 
                             <?php
                             $i++;
@@ -65,25 +65,44 @@ include_once($path);
 
                 <div id="cards">
                     <?php if (isset($_GET['date']) && $_GET['date'] != 'summaryAllDate') {
-                        //แสดงปุ่ม
+                        $path = $_SERVER['DOCUMENT_ROOT'];
+                        $path .= "/SoftEn2019/Sec2/ScrumBros/model/getCountAllStatus.php";
+                        include($path);
+
                         ?>
-                        <div class="row">
-                            <div class="col mx-1">
-                                <div class="present">
-                                    <div class="frontPresent">//จำนวนมาเรียน</div>
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-2 mx-1">
+                                <div class="present btn-success">
+                                    <div>
+                                        <span class="bg-white text-dark px-4 cardHeader rounded">มา</span>
+                                        <span ><?= $countStatus[0] ?></span>
+                                        <input type="hidden" id="countStatusPresent" value="<?= $countStatus[0] ?>">
+                                        <span class="bg-white text-dark px-2 cardFooter">คน</span>
+                                    </div>
+
 
 
                                 </div>
                             </div>
-                            <div class="col mx-1">
-                                <div class="absent">
-                                    <div class="frontAbsent">//จำนวนขาด</div>
+                            <div class="col col-lg-2 mx-1">
+                                <div class="absent btn-danger">
+                                    <div>
+                                        <span class="bg-white text-dark px-4 cardHeader rounded">ขาด</span>
+                                        <span> <?= $countStatus[1] ?></span>
+                                        <input type="hidden" id="countStatusAbsent" value="<?= $countStatus[1] ?>">
+                                        <span class="bg-white text-dark px-2 cardFooter">คน</span>
+                                    </div>
 
                                 </div>
                             </div>
-                            <div class="col mx-1">
-                                <div class="leave">
-                                    <div class="frontLeave">//จำนวนลา</div>
+                            <div class="col col-lg-2 mx-1">
+                                <div class="leave btn-warning">
+                                    <div>
+                                        <span class="bg-white text-dark px-4 cardHeader rounded">ลา</span>
+                                        <span> <?= $countStatus[2] ?></span>
+                                        <input type="hidden" id="countStatusLeave" value="<?= $countStatus[2] ?>">
+                                        <span class="bg-white text-dark px-2 cardFooter">คน</span>
+                                    </div>
 
 
                                 </div>
@@ -91,12 +110,44 @@ include_once($path);
                         </div>
 
                     <?php
+
                 }
                 ?>
                 </div>
-                <div id="attendStatus">
-                    
-                </div>
+                <?php if (isset($_GET['date']) && isset($_GET['attendanceStatus'])) { ?>
+                    <div id="attendStatus" style="margin-top:10rem">
+                        <!-- Student list-->
+                        <?php
+                        $path = $_SERVER['DOCUMENT_ROOT'];
+                        $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAttendInfoByStatus.php";
+                        include($path);
+
+                        echo "<table class='table dataTable' id='classStudent'>";
+                        $i = 0;
+                        while ($row = $stmt->fetch()) {
+                            if ($stmt->rowCount() > 0 && $i == 0) {
+                                echo '<thead><tr>
+                                <th>รหัสนักศึกษา</th>
+                                <th>ชื่อ - สกุล</th>
+                                <th>ชั้นปี</th>
+                                <th>สาขา</th>
+                                <th>สถานะ</th>
+                                </tr></thead><tbody>';
+                            }
+                            echo '<tr>
+                                <td>' . $row['stdId'] . '</td>
+                                <td>' . $row['firstName'] . ' ' . $row['lastName'] . '</td>
+                                <td>' . $row['Year'] . '</td>
+                                <td>' . $row['Branch'] . '</td>
+                                <td>' . $row['attendanceStatus'] . '</td>
+                                </tr>';
+                            $i++;
+                        } ?>
+                        </tbody>
+                        </table>
+
+                    </div>
+                <?php } ?>
 
             </div>
 
@@ -138,6 +189,9 @@ include('inClassErrorHandling.php');
             }
         });
     };
+    $(document).ready(function() {
+        $('#classStudent').DataTable();
+    });
 </script>
 <script type="text/javascript" src="js/card.js"></script>
 

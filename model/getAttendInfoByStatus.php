@@ -1,18 +1,23 @@
 <?php
-function getAttendInfoPresent(){
-$stmt = $pdo->prepare("SELECT
-idAttend,
-DATE_FORMAT(dayCheckName,'%d/%m/%Y') AS dayCheckName,
-stdId,attendanceStatus,subject_id
-FROM attendance_status
+$thAttendStatus='';
+if($_GET['attendanceStatus']=='present'){
+    $thAttendStatus = 'มา';
+   
+}
+else if($_GET['attendanceStatus']=='absent'){
+    $thAttendStatus = 'ขาด';
+   
+}
+else if($_GET['attendanceStatus']=='leave'){
+    $thAttendStatus = 'ลา';
+  
+}
+$stmt = $pdo->prepare("SELECT * FROM attendance_status a,user_info b
 WHERE dayCheckName = ? 
 AND attendanceStatus=?
-ORDER BY stdId");
+AND a.stdId = b.stdId
+ORDER BY a.stdId");
 $stmt->bindParam(1, $_GET['date']);
-$stmt->bindParam(1, $$_GET['attendanceStatus']);
-$stmt->execute(); 
-}
-
-
-
+$stmt->bindParam(2, $thAttendStatus);
+$stmt->execute();
 ?>
