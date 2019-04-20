@@ -75,7 +75,7 @@ include_once($path);
                                 <div class="present btn-success">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">มา</span>
-                                        <span ><?= $countStatus[0] ?></span>
+                                        <span><?= $countStatus[0] ?></span>
                                         <input type="hidden" id="countStatusPresent" value="<?= $countStatus[0] ?>">
                                         <span class="bg-white text-dark px-2 cardFooter">คน</span>
                                     </div>
@@ -114,6 +114,7 @@ include_once($path);
                 }
                 ?>
                 </div>
+
                 <?php if (isset($_GET['date']) && isset($_GET['attendanceStatus'])) { ?>
                     <div id="attendStatus" style="margin-top:10rem">
                         <!-- Student list-->
@@ -147,6 +148,12 @@ include_once($path);
                         </table>
 
                     </div>
+                <?php } ?>
+                
+                <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
+                    //ตรงนี้จะ include ข้อมูลโดยรวมมา
+                    
+                    ?>
                 <?php } ?>
 
             </div>
