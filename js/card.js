@@ -82,12 +82,12 @@ if (countStatusPresent == 0) {
 }
 if (countStatusAbsent == 0) {
     $('.absent').on('click', function () {
-        alert('ไม่สามารถทำรายการได้ ไม่มีนักศึกษาขาดเรียน');
+        alert('ไม่สามารถทำรายการได้ ไม่มีนักศึกษาที่ขาดเรียน');
     });
 }
 
 if (countStatusLeave == 0) {
     $('.leave').on('click', function () {
-        alert('ไม่สามารถทำรายการได้ ไม่มีนักศึกษาลา');
+        alert('ไม่สามารถทำรายการได้ ไม่มีนักศึกษาที่ลา');
     });
 }
