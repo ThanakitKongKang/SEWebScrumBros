@@ -63,7 +63,7 @@ include_once($path);
 
                 </div>
 
-                <div id="cards">
+                <div>
                     <?php if (isset($_GET['date']) && $_GET['date'] != 'summaryAllDate') {
                         //แสดงปุ่ม
                         ?>
@@ -71,20 +71,20 @@ include_once($path);
                             <div class="col mx-1">
                                 <div class="present">
                                     <div class="frontPresent">//จำนวนมาเรียน</div>
-
+                                    <input type="hidden" id="attendanceStatus" value="มา">
 
                                 </div>
                             </div>
                             <div class="col mx-1">
                                 <div class="absent">
                                     <div class="frontAbsent">//จำนวนขาด</div>
-
+                                    <input type="hidden" id="attendanceStatus" value="ขาด">
                                 </div>
                             </div>
                             <div class="col mx-1">
                                 <div class="leave">
                                     <div class="frontLeave">//จำนวนลา</div>
-
+                                    <input type="hidden" id="attendanceStatus" value="ลา">
 
                                 </div>
                             </div>
@@ -93,9 +93,6 @@ include_once($path);
                     <?php
                 }
                 ?>
-                </div>
-                <div id="attendStatus">
-                    
                 </div>
 
             </div>
