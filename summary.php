@@ -17,8 +17,8 @@ include_once($path);
         if ($_SESSION['role'] == 'อาจารย์') {
             ?>
             <?php include('header.php'); ?>
-            <?php include('nav/nav-class.php');
-            ?>
+         
+            
 
             <div class="container mt-3">
                 <?php include('classCoverImage.php'); ?>
@@ -61,10 +61,17 @@ include_once($path);
 
                 <div>
                     <?php if (isset($_GET['date'])) {
-                       //แสดงปุ่ม
-                        
-                    }
-                    ?>
+                        //แสดงปุ่ม
+                        ?>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                        </div>
+
+                    <?php
+                }
+                ?>
                 </div>
 
             </div>
@@ -95,10 +102,10 @@ include('inClassErrorHandling.php');
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
         var go = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
-                $_GET['subjectCode'] +
-                "&year=" + $_GET['year'] +
-                "&semester=" + $_GET['semester'] +
-                "&section=" + $_GET['section'];
+            $_GET['subjectCode'] +
+            "&year=" + $_GET['year'] +
+            "&semester=" + $_GET['semester'] +
+            "&section=" + $_GET['section'];
         $.ajax({
             type: "GET",
             data: "date=" + date,

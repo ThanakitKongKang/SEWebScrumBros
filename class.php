@@ -19,7 +19,7 @@ include_once($path);
     <?php if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester']) && isset($_GET['section'])) { ?>
         <?php include('header.php'); ?>
 
-        <?php include('nav/nav-class.php'); ?>
+      
 
         <div class="container mt-3">
 

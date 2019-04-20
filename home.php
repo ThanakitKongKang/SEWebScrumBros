@@ -15,7 +15,6 @@ include_once($path);
         <?php include('header.php'); ?>
         <?php include('alert/successLogin.php'); ?>
 
-        <?php include('nav/nav-home.php'); ?>
         <div class="container mt-3">
 
 
