@@ -44,7 +44,7 @@ include_once($path);
                                 } ?> value="summaryAllDate">ข้อมูลโดยรวมทุกคาบ</option>
                         <?php
                         $i = 1;
-                        while ($row = $stmt->fetch()) {
+                        while ($row = $getDate->fetch()) {
                             ?>
 
                             <option <?php
@@ -133,6 +133,7 @@ include_once($path);
                                 <th>ชั้นปี</th>
                                 <th>สาขา</th>
                                 <th>สถานะ</th>
+                                
                                 </tr></thead><tbody>';
                             }
                             echo '<tr>
@@ -152,7 +153,7 @@ include_once($path);
                 
                 <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
                     //ตรงนี้จะ include ข้อมูลโดยรวมมา
-                    
+                    include('summaryAllDate.php')
                     ?>
                 <?php } ?>
 

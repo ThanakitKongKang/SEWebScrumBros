@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2019 at 03:03 PM
+-- Generation Time: Apr 21, 2019 at 08:46 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attendance status`
+-- Table structure for table `attendance_status`
 --
 
-CREATE TABLE `attendance status` (
+CREATE TABLE `attendance_status` (
   `idAttend` int(11) NOT NULL,
   `stdId` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `dayCheckName` date NOT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `attendance status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `attendance status`
+-- Dumping data for table `attendance_status`
 --
 
-INSERT INTO `attendance status` (`idAttend`, `stdId`, `dayCheckName`, `attendanceStatus`, `subject_id`) VALUES
+INSERT INTO `attendance_status` (`idAttend`, `stdId`, `dayCheckName`, `attendanceStatus`, `subject_id`) VALUES
 (6, '583020370-9', '2019-01-07', 'มา', 1),
 (7, '583020330-1', '2019-01-07', 'ลา', 1),
 (8, '593020403-1', '2019-01-07', 'มา', 1),
@@ -70,7 +70,6 @@ INSERT INTO `attendance status` (`idAttend`, `stdId`, `dayCheckName`, `attendanc
 (34, '593020459-4', '2019-01-28', 'มา', 1),
 (35, '593020462-5	', '2019-01-28', 'ขาด', 1),
 (36, '583020370-9', '2019-01-14', 'มา', 1),
-(37, '583020330-1', '2019-01-14', 'มา', 1),
 (38, '593020403-1', '2019-01-14', 'มา', 1),
 (39, '593020474-8', '2019-01-14', 'มา', 1),
 (40, '593020423-5', '2019-01-14', 'มา', 1),
@@ -79,22 +78,9 @@ INSERT INTO `attendance status` (`idAttend`, `stdId`, `dayCheckName`, `attendanc
 (43, '593020455-2', '2019-01-14', 'มา', 1),
 (44, '593020459-4', '2019-01-14', 'มา', 1),
 (45, '593020462-5	', '2019-01-14', 'มา', 1),
-(54, '593020459-4', '2019-01-14', 'ขาด', 1),
-(55, '593020462-5	', '2019-01-14', 'มา', 1),
 (56, '583020330-1', '2019-01-14', 'ลา', 1),
 (57, '583020370-9', '2019-01-28', 'มา', 1),
 (58, '583020330-1', '2019-01-28', 'มา', 1),
-(59, '593021283-0', '2019-01-07', 'มา', 7),
-(60, '593021284-8', '2019-01-07', 'มา', 7),
-(61, '593020426-9', '2019-01-07', 'มา', 7),
-(62, '593021286-4', '2019-01-07', 'ลา', 7),
-(63, '593020407-3', '2019-04-07', 'มา', 7),
-(64, '593020428-5', '2019-04-07', 'มา', 7),
-(65, '593020447-1', '2019-04-07', 'มา', 7),
-(66, '593020450-2', '2019-04-07', 'มา', 7),
-(67, '593020456-0', '2019-04-07', 'มา', 7),
-(68, '593020464-1', '2019-04-07', 'มา', 7),
-(69, '593020802-7', '2019-04-07', 'มา', 7),
 (70, '593021283-0', '2019-01-14', 'มา', 7),
 (71, '593021284-8', '2019-01-14', 'มา', 7),
 (72, '593020426-9', '2019-01-14', 'มา', 7),
@@ -159,7 +145,10 @@ INSERT INTO `subject` (`subject_id`, `subject_code`, `subjectName_Th`, `subjectN
 (7, '322371', 'วิศวกรรมซอฟต์แวร์', 'SOFTWARE ENGINEERING', '2', 2561, 2),
 (8, '322391', 'ระเบียบวิธีวิจัย	', 'RESEARCH METHODOLOGY', '2', 2561, 2),
 (9, '322391', 'ระเบียบวิธีวิจัย	', 'RESEARCH METHODOLOGY', '3', 2561, 2),
-(10, 'SC311004', 'การเขียนโปรแกรมเชิงวัตถุ', 'OBJECT-ORIENTED PROGRAMMING ', '2', 2561, 2);
+(10, 'SC311004', 'การเขียนโปรแกรมเชิงวัตถุ', 'OBJECT-ORIENTED PROGRAMMING ', '2', 2561, 2),
+(11, '322385', 'การประกันคุณภาพซอฟต์แวร์', 'SOFTWARE QUALITY ASSURANCE', '1', 2561, 1),
+(12, '322385', 'การประกันคุณภาพซอฟต์แวร์', 'SOFTWARE QUALITY ASSURANCE', '2', 2561, 1),
+(13, '322327', 'ความมั่นคงระบบเครื่อข่ายคอมพิวเตอร์', 'COMPUTER NETWORK SECURITY', '2', 2561, 1);
 
 -- --------------------------------------------------------
 
@@ -256,19 +245,25 @@ INSERT INTO `user_role` (`subject_id`, `UID`, `roleID`, `role`) VALUES
 (7, 25, 25, 'นักศึกษา'),
 (7, 26, 26, 'นักศึกษา'),
 (7, 27, 27, 'นักศึกษา'),
-(2, 4, 28, 'อาจารย์');
+(2, 4, 28, 'อาจารย์'),
+(2, 1, 29, 'อาจารย์'),
+(4, 1, 30, 'อาจารย์'),
+(7, 1, 31, 'อาจารย์'),
+(8, 1, 32, 'อาจารย์'),
+(9, 1, 33, 'อาจารย์'),
+(11, 1, 34, 'อาจารย์'),
+(12, 1, 35, 'อาจารย์'),
+(13, 1, 36, 'อาจารย์');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `attendance status`
+-- Indexes for table `attendance_status`
 --
-ALTER TABLE `attendance status`
-  ADD PRIMARY KEY (`idAttend`),
-  ADD KEY `stdId` (`stdId`),
-  ADD KEY `attendance status_sjfk_1` (`subject_id`);
+ALTER TABLE `attendance_status`
+  ADD PRIMARY KEY (`idAttend`);
 
 --
 -- Indexes for table `subject`
@@ -298,16 +293,10 @@ ALTER TABLE `user_role`
 --
 
 --
--- AUTO_INCREMENT for table `attendance status`
---
-ALTER TABLE `attendance status`
-  MODIFY `idAttend` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
-
---
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_info`
@@ -319,18 +308,11 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `roleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `roleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `attendance status`
---
-ALTER TABLE `attendance status`
-  ADD CONSTRAINT `attendance status_ibfk_1` FOREIGN KEY (`stdId`) REFERENCES `user_info` (`stdId`),
-  ADD CONSTRAINT `attendance status_sjfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`);
 
 --
 -- Constraints for table `user_role`

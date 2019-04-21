@@ -33,5 +33,11 @@ session_start(); ?>
         body {
             font-family: 'Kanit', sans-serif;
         }
+        h1{
+            white-space: nowrap; 
+            text-overflow: ellipsis; 
+            width: 80%;
+            overflow: hidden;
+        }
     </style>
 </head>
