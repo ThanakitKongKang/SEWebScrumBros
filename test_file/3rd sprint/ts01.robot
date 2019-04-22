@@ -2,60 +2,30 @@
 Library    Selenium2Library
 
 *** Variable ***
-${LOGINHOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php
-${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/home.php
+${LOGINHOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php
+${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php
+${CLASSPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/class.php
+${SUMMARYPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php
 ${BROWSER}    Chrome
 
 *** Test Case ***
 TC01(Success Teacher Login)
     Open Browser    ${LOGINHOMEPAGE}    ${BROWSER}
-    Location Should Be    ${LOGINHOMEPAGE}
+    Location Should Contain    ${LOGINHOMEPAGE}
     Input Text    name=username    chitsutha
     Input Text    name=password    chitsuthakku2019
     Click Button    login-button
-    Location Should Be    ${HOMEPAGE}
-    Page Should Contain    Login successful.
-    Page Should Contain    อ.ดร.ชิตสุธา สุ่มเล็ก
-    Page Should Contain    อาจารย์
-    Click Button    logout
+    Location Should Contain    ${HOMEPAGE}
+    Click Element    xpath: //html/body/div/div[1]/div[1]/a/div/div
+    Location Should Contain    ${CLASSPAGE}
 
-TC02(Success TA Login)
-    Go To    ${LOGINHOMEPAGE}
-    Location Should Be    ${LOGINHOMEPAGE}
-    Input Text    name=username    593021274-1
-    Input Text    name=password    meytawut274-1
-    Click Button    login-button
-    Location Should Be    ${HOMEPAGE}
-    Page Should Contain    Login successful.
-    Page Should Contain    นายเมธวัฒน์ จงใจภักดิ์
-    Page Should Contain    ผู้ช่วยอาจารย์
-    Page Should Contain    นักศึกษา
-    Click Button    logout
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]
+    Location Should Contain    ${SUMMARYPAGE}
 
-TC02(Reset Account Lock Count)
-    Go To    ${LOGINHOMEPAGE}
-    Location Should Be    ${LOGINHOMEPAGE}
-    Input Text    name=username    593021274-1
-    Input Text    name=password    srtfjksrjhaf
-    Click Button    login-button
-    Input Text    name=username    593021274-1
-    Input Text    name=password    srsjerwtsrajws
-    Click Button    login-button
-    Input Text    name=username    593021274-1
-    Input Text    name=password    meytawut274-1
-    Click Button    login-button
-    Location Should Be    ${HOMEPAGE}
-    Page Should Contain    Login successful.
-    Page Should Contain    นายเมธวัฒน์ จงใจภักดิ์
-    Page Should Contain    ผู้ช่วยอาจารย์
-    Page Should Contain    นักศึกษา
-    Click Button    logout
-    Input Text    name=username    593021274-1
-    Input Text    name=password    srtfjksrjhaf
-    Click Button    login-button
-    Page Should Contain    Failed, password is
-    Page Should Contain    incorrect.
-    Page Should Contain    you have
-    Page Should Contain    2
-    Page Should Contain    chances, then
-    Page Should Contain    your account will be restricted
+    Element Should Not Be Visible    xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div
+    Click Element    xpath: //*[@id="date"]
+    Click Element    xpath: //*[@id="date"]/option[2]
+    Location Should Contain    ${SUMMARYPAGE}
+    Element Should Be Visible    xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div
+    
