@@ -18,7 +18,15 @@ include_once($path);
 
 
         <div class="container mt-3">
-
+            <div class="row justify-content-start mb-2">
+                <?php
+                if (basename($_SERVER['PHP_SELF']) == 'class.php') {
+                    echo "<a href='home.php' class='nav-link p-0'>home </a>";
+                    echo "<a href='#' class='nav-link py-0 disabled'>/</a>";
+                    echo "<a href='#' class='nav-link p-0 disabled'>" . $_GET['subjectCode'] . " sec." . $_GET['section'] . " (" . $_GET["semester"] . "/" . $_GET['year'] . ")" . "</a>";
+                }
+                ?>
+            </div>
             <?php include('classCoverImage.php'); ?>
 
 

@@ -1,18 +1,6 @@
-<head>
-<style>
-th{
-    white-space: nowrap;
-}
-td{
-    white-space: nowrap;
-}
-</style>
-
-
-</head>
 <body>
 <h3 class="text-center mt-4">สรุปข้อมูลการมาเรียนของนักศึกษา ทุกคาบ</h3>
-    <div id="summaryAllDate" class="row justify-content-center mb-5 px-3">
+    <div id="summaryAllDate" class="mb-5 px-3">
        
 
         <?php
@@ -28,7 +16,7 @@ td{
         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAllAttendInfoBySubjectID.php";
         include($path);
 
-        echo "<table style='max-width:1300px!important;' class='table dataTable table-bordered table-responsive' id='summaryAllDateTable'>";
+        echo "<table style='max-width:1800px!important;min-width:fit-content!important;' class='table dataTable table-bordered table-responsive' id='summaryAllDateTable' data-page-length='50'>";
         $i = 0;
         // echo $stmt2->rowCount();
         while ($row = $stmt->fetch()) {
@@ -98,12 +86,13 @@ td{
                     }
                 }
             }
-            echo "<td class='text-center'>" . (
-                ($thisStudentPresent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
-            echo "<td class='text-center'>" . (
-                ($thisStudentAbsent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
-            echo "<td class='text-center'>" . (
-                ($thisStudentLeave / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
+            $percentPressent = (($thisStudentPresent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100);
+            $percentAbsent = (($thisStudentAbsent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100);
+            $precentLeave = (($thisStudentLeave / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100);
+
+            echo "<td class='text-center'>" .  number_format((float)$percentPressent, 2, '.', '')."%</td>";
+            echo "<td class='text-center'>" .  number_format((float)$percentAbsent, 2, '.', '') . "%</td>";
+            echo "<td class='text-center'>" .  number_format((float)$precentLeave, 2, '.', '') . "%</td>";
 
 
 
