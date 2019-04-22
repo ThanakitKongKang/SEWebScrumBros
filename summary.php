@@ -76,16 +76,16 @@ include_once($path);
                         <div class="row justify-content-md-center">
                             <div class="col col-lg-2 mx-1">
                                 <div class="present
-                                                                                <?php
-                                                                                if (!isset($_GET['attendanceStatus'])) {
-                                                                                    echo "btn-success";
-                                                                                } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'present') {
-                                                                                    echo "btn-success";
-                                                                                } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
-                                                                                    echo "btn-secondary";
-                                                                                }
-                                                                                ?>
-                                                                                " title="คลิกเพื่อดูข้อมูลนักศึกษาที่มาเรียน">
+                                                                                            <?php
+                                                                                            if (!isset($_GET['attendanceStatus'])) {
+                                                                                                echo "btn-success";
+                                                                                            } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'present') {
+                                                                                                echo "btn-success";
+                                                                                            } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
+                                                                                                echo "btn-secondary";
+                                                                                            }
+                                                                                            ?>
+                                                                                            " title="คลิกเพื่อดูข้อมูลนักศึกษาที่มาเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">มา</span>
                                         <span><?= $countStatus[0] ?></span>
@@ -100,16 +100,16 @@ include_once($path);
                             </div>
                             <div class="col col-lg-2 mx-1">
                                 <div class="absent 
-                                                                    <?php if (!isset($_GET['attendanceStatus'])) {
-                                                                        echo "btn-danger";
-                                                                    }
-                                                                    if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'absent') {
-                                                                        echo "btn-danger";
-                                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'absent') {
-                                                                        echo "btn-secondary";
-                                                                    }
-                                                                    ?>
-                                                                                " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ขาดเรียน">
+                                                                                <?php if (!isset($_GET['attendanceStatus'])) {
+                                                                                    echo "btn-danger";
+                                                                                }
+                                                                                if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'absent') {
+                                                                                    echo "btn-danger";
+                                                                                } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'absent') {
+                                                                                    echo "btn-secondary";
+                                                                                }
+                                                                                ?>
+                                                                                            " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ขาดเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ขาด</span>
                                         <span> <?= $countStatus[1] ?></span>
@@ -121,16 +121,16 @@ include_once($path);
                             </div>
                             <div class="col col-lg-2 mx-1">
                                 <div class="leave 
-                                                                    <?php
-                                                                    if (!isset($_GET['attendanceStatus'])) {
-                                                                        echo "btn-warning";
-                                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
-                                                                        echo "btn-warning";
-                                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'leave') {
-                                                                        echo "btn-secondary";
-                                                                    }
-                                                                    ?>
-                                                                                " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ลา">
+                                                                                <?php
+                                                                                if (!isset($_GET['attendanceStatus'])) {
+                                                                                    echo "btn-warning";
+                                                                                } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
+                                                                                    echo "btn-warning";
+                                                                                } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'leave') {
+                                                                                    echo "btn-secondary";
+                                                                                }
+                                                                                ?>
+                                                                                            " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ลา">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ลา</span>
                                         <span> <?= $countStatus[2] ?></span>

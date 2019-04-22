@@ -1,6 +1,19 @@
+<head>
+<style>
+th{
+    white-space: nowrap;
+}
+td{
+    white-space: nowrap;
+}
+</style>
+
+
+</head>
 <body>
-    <div id="summaryAllDate" class="m-5">
-        <h3 class="text-center my-3 mb-4">สรุปข้อมูลการมาเรียนของนักศึกษา ทุกคาบ</h3>
+<h3 class="text-center mt-4">สรุปข้อมูลการมาเรียนของนักศึกษา ทุกคาบ</h3>
+    <div id="summaryAllDate" class="row justify-content-center mb-5 px-3">
+       
 
         <?php
         $path = $_SERVER['DOCUMENT_ROOT'];
@@ -15,24 +28,31 @@
         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAllAttendInfoBySubjectID.php";
         include($path);
 
-        echo "<table class='table dataTable table-bordered table-responsive' id='summaryAllDateTable'>";
+        echo "<table style='max-width:1300px!important;' class='table dataTable table-bordered table-responsive' id='summaryAllDateTable'>";
         $i = 0;
         // echo $stmt2->rowCount();
         while ($row = $stmt->fetch()) {
             if ($stmt->rowCount() > 0 && $i == 0) {
-                echo '<thead><tr>
-                                <th>รหัสนักศึกษา</th>
-                                <th>ชื่อ - สกุล</th>
-                                <th>ชั้นปี</th>
-                                <th>สาขา</th>
+                echo '<thead>
+                <tr>
+                <th class="text-center" colspan="4">ข้อมูลนักศึกษา</th>
+                <th class="text-center" colspan="'.$getDate->rowCount().'">วัน/เดือน/ปี ที่เรียน</th>
+                <th class="text-center" colspan="3">อัตราการเข้าเรียน คิดเป็นเปอร์เซ็นต์</th>
+                </tr>
+                <tr>
+                                <th class="text-center">รหัสนักศึกษา</th>
+                                <th class="text-center">ชื่อ - สกุล</th>
+                                <th class="text-center">ชั้นปี</th>
+                                <th class="text-center">สาขา</th>
                                 ';
 
                 while ($rowDate = $getDate->fetch()) {
-                    echo '<th>' . $rowDate['dayCheckName'] . '</th>';
+                    echo '<th class="text-center">' . $rowDate['dayCheckName'] . '</th>';
+                  
                 }
-                echo '<th>มาเรียน (คิดเป็น %)</th>
-                <th>ขาดเรียน (คิดเป็น %)</th>
-                <th>ลา (คิดเป็น %)</th>';
+                echo '<th class="text-center">มาเรียน</th>
+                <th class="text-center">ขาดเรียน</th>
+                <th class="text-center">ลา</th>';
                 echo '</tr></thead><tbody>';
             }
             echo '<tr>
@@ -78,11 +98,11 @@
                     }
                 }
             }
-            echo "<td>" . (
+            echo "<td class='text-center'>" . (
                 ($thisStudentPresent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
-            echo "<td>" . (
+            echo "<td class='text-center'>" . (
                 ($thisStudentAbsent / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
-            echo "<td>" . (
+            echo "<td class='text-center'>" . (
                 ($thisStudentLeave / ($thisStudentPresent + $thisStudentAbsent + $thisStudentLeave)) * 100) . "%</td>";
 
 
@@ -99,6 +119,11 @@
 
 <script>
     $(document).ready(function() {
-        $('#summaryAllDateTable').DataTable();
+        $('#summaryAllDateTable').DataTable({
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ]
+        });
     });
 </script>

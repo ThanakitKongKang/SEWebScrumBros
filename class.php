@@ -8,18 +8,14 @@ include_once($path);
 
 <head>
     <title><?= $_GET['subjectCode'] . " sec." . $_GET['section'] . " (" . $_GET["semester"] . "/" . $_GET['year'] . ")" ?></title>
-    <script>
-        $(document).ready(function() {
-            $('#classStudent').DataTable();
-        });
-    </script>
+
 </head>
 
 <body>
     <?php if (!empty($_SESSION["username"]) && isset($_GET['subjectCode']) && isset($_GET['year']) && isset($_GET['semester']) && isset($_GET['section'])) { ?>
         <?php include('header.php'); ?>
 
-      
+
 
         <div class="container mt-3">
 
@@ -40,7 +36,7 @@ include_once($path);
                     <table class="" style="width:100%">
 
                         <?php
-                      
+
                         $path = $_SERVER['DOCUMENT_ROOT'];
                         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getTeacherInClass.php";
                         include($path);
@@ -124,6 +120,15 @@ include_once($path);
 }
 include('inClassErrorHandling.php'); ?>
 </body>
-
+<script>
+    $(document).ready(function() {
+        $('#classStudent').DataTable({
+            "lengthMenu": [
+                [25, 50, -1],
+                [25, 50, "All"]
+            ]
+        });
+    });
+</script>
 
 </html>
