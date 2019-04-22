@@ -14,6 +14,7 @@ include_once($path);
     <?php if (empty($_SESSION["username"])) { ?>
     <?php include "./alert/failLogin.php"; ?>
     <?php include "./alert/accountLocked.php"; ?>
+    <?php include "./alert/accountNotFound.php"; ?>
 
 
     <form action="./model/check-login.php" method="POST">

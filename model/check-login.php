@@ -7,6 +7,8 @@ $stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
 $stmt->bindParam(1, $_POST["username"]);
 $stmt->execute();
 $row = $stmt->fetch();
+//เช็คว่ามีบัญชีไหไม
+if ($stmt->rowCount() > 0) {
   //เช็คว่าบัญชีถูกล็อกหรือยัง
   if ($row["count_CheckLogin"] < 3) {
     $stmt = $pdo->prepare("SELECT * FROM user_info LEFT JOIN user_role ON user_info.UID = user_role.UID WHERE username = ? AND password = ?");
@@ -33,28 +35,34 @@ $row = $stmt->fetch();
       $stmt->execute();
       header('location:../home.php');
       ?>
-<?php 
-} else {
-  //อัพเดทค่า count_CheckLogin ให้ +1
-  $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = count_CheckLogin + 1 WHERE username = ?");
-  $stmt->bindParam(1, $_POST["username"]);
-  $stmt->execute();
-  //ดึงค่า count_CheckLogin แสดงให้ผู้ใช้เห็นว่าล็อกอินได้อีกกี่ครั้ง
-  $stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
-  $stmt->bindParam(1, $_POST["username"]);
-  $stmt->execute();
-  $row = $stmt->fetch();
-  $_SESSION["failedLogin"] = 3 - $row["count_CheckLogin"];
-  if ($row["count_CheckLogin"] == 3) {
-    $_SESSION["accountLocked"] = true;
+        <?php
+      } else {
+        //อัพเดทค่า count_CheckLogin ให้ +1
+        $stmt = $pdo->prepare("UPDATE user_info SET count_CheckLogin = count_CheckLogin + 1 WHERE username = ?");
+        $stmt->bindParam(1, $_POST["username"]);
+        $stmt->execute();
+        //ดึงค่า count_CheckLogin แสดงให้ผู้ใช้เห็นว่าล็อกอินได้อีกกี่ครั้ง
+        $stmt = $pdo->prepare("SELECT * FROM user_info WHERE username = ?");
+        $stmt->bindParam(1, $_POST["username"]);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        $_SESSION["failedLogin"] = 3 - $row["count_CheckLogin"];
+        if ($row["count_CheckLogin"] == 3) {
+          $_SESSION["accountLocked"] = true;
+        }
+        header('location:../login.php');
+      }
+    }
+    //กรณีบัญชีถูกล็อก
+    else {
+      $_SESSION["accountLocked"] = true;
+      header('location:../login.php');
+    }
+ 
   }
-  header('location:../login.php');
-}
-}
-//กรณีบัญชีถูกล็อก
-else {
-  $_SESSION["accountLocked"] = true;
-  header('location:../login.php');
-}
+  else{
+    $_SESSION["accountNotFound"] = true;
+    header('location:../login.php');
+  }
 
-?> 
+  ?> 
