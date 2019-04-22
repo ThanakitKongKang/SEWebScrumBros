@@ -1,5 +1,7 @@
 <body>
     <div id="summaryAllDate">
+    <h3 class="text-center my-3 mb-4">สรุปข้อมูลการมาเรียนของนักศึกษา ทุกคาบ</h3>
+
         <?php
         $path = $_SERVER['DOCUMENT_ROOT'];
         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getStudentAttendInfoBySubjectID.php";
@@ -55,16 +57,13 @@
                 $attendByID->bindParam(2, $row['stdId']);
                 $attendByID->bindParam(3, $rowDate['sqlformatDayCheckName']);
                 $attendByID->execute();
-                
+
                 while ($rowAttend = $attendByID->fetch()) {
-                        echo '<td>' . $rowAttend['attendanceStatus'].' '.$rowDate['sqlformatDayCheckName'] . '</td>';
-                       
-                   
-                    }
-                  
+                    echo '<td class="text-center">' . $rowAttend['attendanceStatus'] . '</td>';
                 }
-            
-              
+            }
+
+
 
             echo '</tr>';
             $i++;

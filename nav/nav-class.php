@@ -130,7 +130,7 @@ while ($row = $stmt->fetch()) {
 if ($isThisTeacherInClass == 'true') { ?>
   <!-- <nav class="nav flex-column shadow-sm p-3 mb-5 bg-white rounded" style="position:fixed;left:5rem;top:7.5rem;border:.1rem solid #dadce0;width:15rem;"> -->
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link dropdown-toggle text-primary" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
     <i class="fas fa-chalkboard-teacher"></i> Lecturer</a>
     <div class="dropdown-menu">
       <table>
@@ -141,9 +141,9 @@ if ($isThisTeacherInClass == 'true') { ?>
           </td>
         </tr>
         <tr class="dropdown-item">
-          <td class="icon"><i class="fas fa-table"></i></td>
+          <td class="icon text-primary"><i class="fas fa-table"></i></td>
           <td>
-            <a class="nav-link" href="summary.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>&section=<?= $_GET['section'] ?>">Summary</a>
+            <a class="nav-link text-primary" href="summary.php?subjectCode=<?= $_GET['subjectCode'] ?>&year=<?= $_GET['year'] ?>&semester=<?= $_GET['semester'] ?>&section=<?= $_GET['section'] ?>">Summary</a>
           </td>
         </tr>
         <tr class="dropdown-item">

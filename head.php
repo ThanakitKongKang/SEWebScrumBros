@@ -26,16 +26,18 @@ session_start(); ?>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
 
 
-    
- 
+
+
 
     <style>
         body {
             font-family: 'Kanit', sans-serif;
         }
-        h1{
-            white-space: nowrap; 
-            text-overflow: ellipsis; 
+
+        h1,
+        .className {
+            white-space: nowrap;
+            text-overflow: ellipsis;
             width: 80%;
             overflow: hidden;
         }

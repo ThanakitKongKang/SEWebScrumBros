@@ -16,7 +16,20 @@ include_once($path);
         <?php include('alert/successLogin.php'); ?>
 
         <div class="container mt-3">
+            <h2 class="text-center my-4">
+                คลาสทั้งหมดที่ <span class="text-primary"><?= $_SESSION['firstName'] . " " . $_SESSION['lastName'] ?></span>
+                <?php if ((isset($isStudent) && $isStudent == 'true') && (isset($isTA) && $isTA != 'true')) {
+                    echo "ศึกษา";
+                } else  if ((isset($isStudent) && $isStudent == 'true') && (isset($isTA) && $isTA == 'true')) {
+                    echo "ศึกษา / ";
+                }
+                if ((isset($isTeacher) && $isTeacher == 'true') || (isset($isTA) && $isTA == 'true')) {
+                    echo "รับผิดชอบ";
+                }
+                ?>
 
+
+            </h2>
 
             <div class="row">
                 <?php
@@ -37,10 +50,12 @@ include_once($path);
                                                 echo "class='text-success '";
                                             else
                                                 echo "class='text-info'"; ?> style="font-size:0.8em;float:right;">(<?= $row["role"] ?>)</span>
-                                    <h4 class="text-primary clearfix"><?= $row["subjectName_Th"] ?></h4>
-                                    <span class="text-muted mb-3"><?= $row["subjectName_En"] ?></span>
+                                    <h4 class="text-primary clearfix className" title="<?= $row["subjectName_Th"] ?>"><?= $row["subjectName_Th"] ?></h4>
+                                    <span class="text-muted mb-3 className"><?= $row["subjectName_En"] ?></span>
                                     <p class="card-text my-3"><?= $row["subject_code"] ?> | ปีการศึกษา <?= $row["year"] ?> | เทอม <?= $row["Semester"] ?> </p>
-                                    <p>section : <?=$row["section"]?></p>
+                                    <p>section :
+                                        <?= $row["section"] ?>
+                                    </p>
 
                                 </div>
 

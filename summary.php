@@ -24,9 +24,9 @@ include_once($path);
             <div class="container mt-3">
                 <?php include('classCoverImage.php'); ?>
 
-                <div class="input-group my-3" style="width:20rem">
+                <div class="input-group my-3" style="width:28rem">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="selectDate">เลือกวันที่เรียน</label>
+                        <label class="input-group-text" for="selectDate">เลือกเพื่อดูข้อมูลการเข้าเรียน</label>
                     </div>
                     <?php
 
@@ -38,10 +38,10 @@ include_once($path);
 
                     <select required id="date" class="custom-select" id="selectDate" onchange="attendanceStatus(this.value);">
 
-                        <option selected value="" disabled>โปรดเลือก..</option>
+                        <option selected value="" disabled>เลือก วัน/เดือน/ปี..</option>
                         <option <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
                                     echo "selected";
-                                } ?> value="summaryAllDate">ข้อมูลโดยรวมทุกคาบ</option>
+                                } ?> value="summaryAllDate">ข้อมูลการเข้าเรียนทุกคาบ</option>
                         <?php
                         $i = 1;
                         while ($row = $getDate->fetch()) {
@@ -50,9 +50,10 @@ include_once($path);
                             <option <?php
                                     if (isset($_GET['date']) && $_GET['date'] == $row['sqlformatDayCheckName']) {
                                         echo "selected";
+                                        $thisDate = $row['dayCheckName'];
                                     }
 
-                                    ?> value="<?= $row['sqlformatDayCheckName'] ?>">คาบที่ <?= $i . " " . $row['dayCheckName'] ?></option>
+                                    ?> value="<?= $row['sqlformatDayCheckName'] ?>">วัน/เดือน/ปี ที่ : <?= $row['dayCheckName'] ?></option>
 
                             <?php
                             $i++;
@@ -64,28 +65,51 @@ include_once($path);
                 </div>
 
                 <div id="cards">
+
                     <?php if (isset($_GET['date']) && $_GET['date'] != 'summaryAllDate') {
                         $path = $_SERVER['DOCUMENT_ROOT'];
                         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getCountAllStatus.php";
                         include($path);
 
                         ?>
+                        <h3 class="text-center my-3 mb-4">สรุปข้อมูลการมาเรียนของนักศึกษา วัน/เดือน/ปี ที่ : <?= $thisDate ?></h3>
                         <div class="row justify-content-md-center">
                             <div class="col col-lg-2 mx-1">
-                                <div class="present btn-success">
+                                <div class="present
+                                                                    <?php
+                                                                    if (!isset($_GET['attendanceStatus'])) {
+                                                                        echo "btn-success";
+                                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'present') {
+                                                                        echo "btn-success";
+                                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
+                                                                        echo "btn-secondary";
+                                                                    }
+                                                                    ?>
+                                                                    " title="คลิกเพื่อดูข้อมูลนักศึกษาที่มาเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">มา</span>
                                         <span><?= $countStatus[0] ?></span>
                                         <input type="hidden" id="countStatusPresent" value="<?= $countStatus[0] ?>">
                                         <span class="bg-white text-dark px-2 cardFooter">คน</span>
+                                    
                                     </div>
-
+                                
 
 
                                 </div>
                             </div>
                             <div class="col col-lg-2 mx-1">
-                                <div class="absent btn-danger">
+                                <div class="absent 
+                                                        <?php if (!isset($_GET['attendanceStatus'])) {
+                                                            echo "btn-danger";
+                                                        }
+                                                        if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'absent') {
+                                                            echo "btn-danger";
+                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'absent') {
+                                                            echo "btn-secondary";
+                                                        }
+                                                        ?>
+                                                                    " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ขาดเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ขาด</span>
                                         <span> <?= $countStatus[1] ?></span>
@@ -96,7 +120,17 @@ include_once($path);
                                 </div>
                             </div>
                             <div class="col col-lg-2 mx-1">
-                                <div class="leave btn-warning">
+                                <div class="leave 
+                                                        <?php
+                                                        if (!isset($_GET['attendanceStatus'])) {
+                                                            echo "btn-warning";
+                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
+                                                            echo "btn-warning";
+                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'leave') {
+                                                            echo "btn-secondary";
+                                                        }
+                                                        ?>
+                                                                    " title="คลิกเพื่อดูข้อมูลนักศึกษาที่ลา">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ลา</span>
                                         <span> <?= $countStatus[2] ?></span>
@@ -150,7 +184,7 @@ include_once($path);
 
                     </div>
                 <?php } ?>
-                
+
                 <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
                     //ตรงนี้จะ include ข้อมูลโดยรวมมา
                     include('summaryAllDate.php')
@@ -184,7 +218,7 @@ include('inClassErrorHandling.php');
             var temp = parts[i].split("=");
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
-        var go = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
+        var go = "summary.php?subjectCode=" +
             $_GET['subjectCode'] +
             "&year=" + $_GET['year'] +
             "&semester=" + $_GET['semester'] +
