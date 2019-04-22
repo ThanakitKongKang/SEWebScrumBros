@@ -11,7 +11,7 @@ if (countStatusPresent != 0) {
             var temp = parts[i].split("=");
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
-        var go2 = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
+        var go2 = "summary.php?subjectCode=" +
             $_GET['subjectCode'] +
             "&year=" + $_GET['year'] +
             "&semester=" + $_GET['semester'] +
@@ -35,7 +35,7 @@ if (countStatusAbsent != 0) {
             var temp = parts[i].split("=");
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
-        var go2 = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
+        var go2 = "summary.php?subjectCode=" +
             $_GET['subjectCode'] +
             "&year=" + $_GET['year'] +
             "&semester=" + $_GET['semester'] +
@@ -59,7 +59,7 @@ if (countStatusLeave != 0) {
             var temp = parts[i].split("=");
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
-        var go2 = "http://localhost/SoftEn2019/Sec2/ScrumBros/summary.php?subjectCode=" +
+        var go2 = "summary.php?subjectCode=" +
             $_GET['subjectCode'] +
             "&year=" + $_GET['year'] +
             "&semester=" + $_GET['semester'] +
