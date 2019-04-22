@@ -60,12 +60,11 @@ include_once($path);
 
 
                     <select required id="date" class="custom-select" id="selectDate" onchange="attendanceStatus(this.value);">
-                    <?php if($getDate->rowCount() <= 0){
-                       echo "<option selected value='' disabled>ไม่มีข้อมูลการเข้าเรียน</option>";
-                    }
-                    else {
-                        echo "<option selected value='' disabled>เลือก วัน/เดือน/ปี..</option>";
-                    }
+                        <?php if ($getDate->rowCount() <= 0) {
+                            echo "<option selected value='' disabled>ไม่มีข้อมูลการเข้าเรียน</option>";
+                        } else {
+                            echo "<option selected value='' disabled>เลือก วัน/เดือน/ปี..</option>";
+                        }
                         if ($getDate->rowCount() > 0) { ?>
                             <option <?php if (isset($_GET['date']) && $_GET['date'] == 'summaryAllDate') {
                                         echo "selected";
@@ -104,16 +103,16 @@ include_once($path);
                         <div class="row justify-content-md-center">
                             <div class="col col-lg-2 mx-1">
                                 <div class="present
-                                                     <?php
-                                                        if (!isset($_GET['attendanceStatus'])) {
-                                                            echo "btn-success";
-                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'present') {
-                                                            echo "btn-success";
-                                                        }
-                                                        if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
-                                                            echo "btn-secondary";
-                                                        }
-                                                        ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่มาเรียน">
+                                     <?php
+                                        if (!isset($_GET['attendanceStatus'])) {
+                                            echo "btn-success";
+                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'present') {
+                                            echo "btn-success";
+                                        }
+                                        if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'present') {
+                                            echo "btn-secondary";
+                                        }
+                                        ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่มาเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">มา</span>
                                         <span><?= $countStatus[0] ?></span>
@@ -128,14 +127,14 @@ include_once($path);
                             </div>
                             <div class="col col-lg-2 mx-1">
                                 <div class="absent 
-                                                  <?php if (!isset($_GET['attendanceStatus'])) {
-                                                        echo "btn-danger";
-                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'absent') {
-                                                        echo "btn-danger";
-                                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'absent') {
-                                                        echo "btn-secondary";
-                                                    }
-                                                    ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่ขาดเรียน">
+                                     <?php if (!isset($_GET['attendanceStatus'])) {
+                                            echo "btn-danger";
+                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'absent') {
+                                            echo "btn-danger";
+                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'absent') {
+                                            echo "btn-secondary";
+                                        }
+                                        ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่ขาดเรียน">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ขาด</span>
                                         <span> <?= $countStatus[1] ?></span>
@@ -147,15 +146,15 @@ include_once($path);
                             </div>
                             <div class="col col-lg-2 mx-1">
                                 <div class="leave 
-                                                       <?php
-                                                        if (!isset($_GET['attendanceStatus'])) {
-                                                            echo "btn-warning";
-                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'leave') {
-                                                            echo "btn-warning";
-                                                        } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'leave') {
-                                                            echo "btn-secondary";
-                                                        }
-                                                        ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่ลา">
+                                   <?php
+                                    if (!isset($_GET['attendanceStatus'])) {
+                                        echo "btn-warning";
+                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] == 'leave') {
+                                        echo "btn-warning";
+                                    } else if (isset($_GET['attendanceStatus']) && $_GET['attendanceStatus'] != 'leave') {
+                                        echo "btn-secondary";
+                                    }
+                                    ?>" title="คลิกเพื่อดูข้อมูลนักศึกษาที่ลา">
                                     <div>
                                         <span class="bg-white text-dark px-4 cardHeader rounded">ลา</span>
                                         <span> <?= $countStatus[2] ?></span>
@@ -174,34 +173,51 @@ include_once($path);
                 ?>
                 </div>
 
+                <?php
+                if (isset($_GET['attendanceStatus'])) {
+                    $path = $_SERVER['DOCUMENT_ROOT'];
+                    $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAttendInfoByStatus.php";
+                    include($path);
+
+                    ?>
+                    <h3 class="text-center my-3 mb-4" style="margin-top:13rem!important">ข้อมูลของนักศึกษาที่ <span class="text-primary"><?= $thAttendStatus ?></span> ในวัน/เดือน/ปี ที่ : <?= $thisDate ?></h3>
+                <?php } ?>
+
                 <?php if (isset($_GET['date']) && isset($_GET['attendanceStatus'])) { ?>
-                    <div id="attendStatus" style="margin-top:10rem">
+                    <div id="attendStatus">
                         <!-- Student list-->
                         <?php
-                        $path = $_SERVER['DOCUMENT_ROOT'];
-                        $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAttendInfoByStatus.php";
-                        include($path);
 
                         echo "<table class='table dataTable' id='classStudent'>";
                         $i = 0;
                         while ($row = $stmt->fetch()) {
                             if ($stmt->rowCount() > 0 && $i == 0) {
                                 echo '<thead><tr>
-                                <th>รหัสนักศึกษา</th>
+                                <th >รหัสนักศึกษา</th>
                                 <th>ชื่อ - สกุล</th>
-                                <th>ชั้นปี</th>
-                                <th>สาขา</th>
-                                <th>สถานะ</th>
-                                
-                                </tr></thead><tbody>';
+                                <th class="text-center">ชั้นปี</th>
+                                <th class="text-center">สาขา</th>
+                                <th class="text-center">สถานะ</th>';
+                                if ($row['attendanceStatus'] == 'ลา') {
+                                    echo '<th class="text-center">หมายเหตุ</th>';
+                                }
+
+                                echo '</tr></thead><tbody>';
                             }
                             echo '<tr>
                                 <td>' . $row['stdId'] . '</td>
                                 <td>' . $row['firstName'] . ' ' . $row['lastName'] . '</td>
-                                <td>' . $row['Year'] . '</td>
-                                <td>' . $row['Branch'] . '</td>
-                                <td>' . $row['attendanceStatus'] . '</td>
-                                </tr>';
+                                <td class="text-center">' . $row['Year'] . '</td>
+                                <td class="text-center">' . $row['Branch'] . '</td>
+                                <td class="text-center">' . $row['attendanceStatus'] . '</td>';
+                            if ($row['attendanceStatus'] == 'ลา') {
+                                if ($row['note'] == null) {
+                                    echo '<td class="text-center">-</td>';
+                                } else  if ($row['note'] != null) {
+                                    echo '<td class="text-center">' . $row['note'] . '</td>';
+                                }
+                            }
+                            echo '</tr>';
                             $i++;
                         } ?>
                         </tbody>

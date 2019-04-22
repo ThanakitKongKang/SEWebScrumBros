@@ -85,7 +85,7 @@
                         echo '<td class="text-center text-white bg-danger">' . $rowAttend['attendanceStatus'] . '</td>';
                         $thisStudentAbsent++;
                     } else if ($rowAttend['attendanceStatus'] == 'ลา') {
-                        echo '<td class="text-center text-white bg-warning">' . $rowAttend['attendanceStatus'] . '</td>';
+                        echo '<td class="text-center text-white bg-warning" title="'.$rowAttend['note'].'">' . $rowAttend['attendanceStatus'] . '</td>';
                         $thisStudentLeave++;
                     }
                 }
