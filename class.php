@@ -88,7 +88,7 @@ include_once($path);
 
                 <div class="col mt-3 ml-3">
                     <!-- Student list-->
-                    <table class="table" id="classStudent">
+                    <table class="table" id="classStudent" data-page-length='25'>
                         <?php
                         $path = $_SERVER['DOCUMENT_ROOT'];
                         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getStudentInClass.php";
@@ -111,7 +111,11 @@ include_once($path);
                                 <td>' . $row['Branch'] . '</td>
                                 </tr>';
                             $i++;
-                        } ?>
+                        }
+                        if($i==0){
+                            echo "<h6 class='text-center text-secondary'>คลาสนี้ยังไม่มีนักศึกษา</h6>";
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -130,12 +134,7 @@ include('inClassErrorHandling.php'); ?>
 </body>
 <script>
     $(document).ready(function() {
-        $('#classStudent').DataTable({
-            "lengthMenu": [
-                [25, 50, -1],
-                [25, 50, "All"]
-            ]
-        });
+        $('#classStudent').DataTable();
     });
 </script>
 
