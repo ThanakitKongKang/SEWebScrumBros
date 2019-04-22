@@ -10,6 +10,7 @@ ${BROWSER}    Chrome
 
 *** Test Case ***
 TC01(Specific Date Summary Page (Unclickable Cards))
+    Set Selenium Speed    0.5 seconds
     Open Browser    ${LOGINHOMEPAGE}    ${BROWSER}
     Location Should Contain    ${LOGINHOMEPAGE}
     Input Text    name=username    chitsutha
@@ -33,6 +34,5 @@ TC01(Specific Date Summary Page (Unclickable Cards))
     Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"]
     Click Element    xpath: //*[@id="cards"]/div/div[3]/div/div
     Sleep    2 seconds
-    Alert Should Be Present
-    Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"] 
-    
+    Alert Should Be Present    text=ไม่สามารถทำรายการได้ ไม่มีนักศึกษาที่ลา
+    Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"]

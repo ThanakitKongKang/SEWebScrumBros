@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190422 23:26:20.702" rpa="false">
-<suite id="s1" name="Ts02" source="C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\3rd sprint\ts02.robot">
-<test id="s1-t1" name="TC01(Specific Date Summary Page (Unclickable Cards))">
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190422 23:38:24.523" rpa="false">
+<suite id="s1" name="Ts01" source="C:\Users\Kalyte\Desktop\SE Project\SEWebScrumBros\test_file\3rd sprint\ts01.robot">
+<test id="s1-t1" name="TC01(All Class Summary Page)">
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20190422 23:38:25.169" endtime="20190422 23:38:25.170"></status>
+</kw>
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${LOGINHOMEPAGE}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:22.171" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:22.171" endtime="20190422 23:26:27.960"></status>
+<msg timestamp="20190422 23:38:25.171" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:25.171" endtime="20190422 23:38:30.324"></status>
 </kw>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${LOGINHOMEPAGE}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:27.974" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:27.962" endtime="20190422 23:26:27.974"></status>
+<msg timestamp="20190422 23:38:30.832" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:30.325" endtime="20190422 23:38:30.832"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -25,8 +32,8 @@
 <arg>name=username</arg>
 <arg>chitsutha</arg>
 </arguments>
-<msg timestamp="20190422 23:26:27.976" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
-<status status="PASS" starttime="20190422 23:26:27.975" endtime="20190422 23:26:28.196"></status>
+<msg timestamp="20190422 23:38:30.833" level="INFO">Typing text 'chitsutha' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20190422 23:38:30.833" endtime="20190422 23:38:32.506"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -34,162 +41,313 @@
 <arg>name=password</arg>
 <arg>chitsuthakku2019</arg>
 </arguments>
-<msg timestamp="20190422 23:26:28.198" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20190422 23:26:28.197" endtime="20190422 23:26:28.424"></status>
+<msg timestamp="20190422 23:38:32.507" level="INFO">Typing text 'chitsuthakku2019' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20190422 23:38:32.507" endtime="20190422 23:38:34.192"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>login-button</arg>
 </arguments>
-<msg timestamp="20190422 23:26:28.425" level="INFO">Clicking button 'login-button'.</msg>
-<status status="PASS" starttime="20190422 23:26:28.424" endtime="20190422 23:26:29.379"></status>
+<msg timestamp="20190422 23:38:34.192" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" starttime="20190422 23:38:34.192" endtime="20190422 23:38:39.482"></status>
 </kw>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${HOMEPAGE}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:29.390" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:29.380" endtime="20190422 23:26:29.390"></status>
+<msg timestamp="20190422 23:38:39.992" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:39.483" endtime="20190422 23:38:39.992"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath: //html/body/div/div[1]/div[1]/a/div/div</arg>
 </arguments>
-<msg timestamp="20190422 23:26:29.391" level="INFO">Clicking element 'xpath: //html/body/div/div[1]/div[1]/a/div/div'.</msg>
-<status status="PASS" starttime="20190422 23:26:29.390" endtime="20190422 23:26:30.077"></status>
+<msg timestamp="20190422 23:38:39.993" level="INFO">Clicking element 'xpath: //html/body/div/div[1]/div[1]/a/div/div'.</msg>
+<status status="PASS" starttime="20190422 23:38:39.992" endtime="20190422 23:38:41.612"></status>
 </kw>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${CLASSPAGE}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.086" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/class.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.078" endtime="20190422 23:26:30.087"></status>
+<msg timestamp="20190422 23:38:42.119" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/class.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:41.612" endtime="20190422 23:38:42.119"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.089" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.088" endtime="20190422 23:26:30.194"></status>
+<msg timestamp="20190422 23:38:42.134" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20190422 23:38:42.134" endtime="20190422 23:38:43.223"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.195" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.195" endtime="20190422 23:26:30.506"></status>
+<msg timestamp="20190422 23:38:43.224" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]'.</msg>
+<status status="PASS" starttime="20190422 23:38:43.223" endtime="20190422 23:38:44.574"></status>
 </kw>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${SUMMARYPAGE}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.516" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.507" endtime="20190422 23:26:30.516"></status>
+<msg timestamp="20190422 23:38:45.083" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:44.574" endtime="20190422 23:38:45.083"></status>
 </kw>
 <kw name="Element Should Not Be Visible" library="Selenium2Library">
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
 <arguments>
-<arg>xpath: //*[@id="cards"]/div</arg>
+<arg>xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.549" level="INFO">Element 'xpath: //*[@id="cards"]/div' did not exist.</msg>
-<status status="PASS" starttime="20190422 23:26:30.518" endtime="20190422 23:26:30.549"></status>
+<msg timestamp="20190422 23:38:45.604" level="INFO">Element 'xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div' did not exist.</msg>
+<status status="PASS" starttime="20190422 23:38:45.083" endtime="20190422 23:38:45.604"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath: //*[@id="date"]</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.550" level="INFO">Clicking element 'xpath: //*[@id="date"]'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.550" endtime="20190422 23:26:30.660"></status>
+<msg timestamp="20190422 23:38:45.605" level="INFO">Clicking element 'xpath: //*[@id="date"]'.</msg>
+<status status="PASS" starttime="20190422 23:38:45.605" endtime="20190422 23:38:46.709"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath: //*[@id="date"]/option[4]</arg>
+<arg>xpath: //*[@id="date"]/option[2]</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.661" level="INFO">Clicking element 'xpath: //*[@id="date"]/option[4]'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.660" endtime="20190422 23:26:30.756"></status>
+<msg timestamp="20190422 23:38:46.712" level="INFO">Clicking element 'xpath: //*[@id="date"]/option[2]'.</msg>
+<status status="PASS" starttime="20190422 23:38:46.711" endtime="20190422 23:38:47.770"></status>
 </kw>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${SUMMARYPAGE}</arg>
 </arguments>
-<msg timestamp="20190422 23:26:30.765" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
-<status status="PASS" starttime="20190422 23:26:30.757" endtime="20190422 23:26:30.765"></status>
+<msg timestamp="20190422 23:38:48.593" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:47.770" endtime="20190422 23:38:48.593"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2 seconds</arg>
 </arguments>
-<msg timestamp="20190422 23:26:32.776" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20190422 23:26:30.766" endtime="20190422 23:26:32.776"></status>
+<msg timestamp="20190422 23:38:50.594" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190422 23:38:48.594" endtime="20190422 23:38:50.594"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div</arg>
+</arguments>
+<msg timestamp="20190422 23:38:51.624" level="INFO">Element 'xpath: //*[@id="summaryAllDateTable_wrapper"]/div[2]/div' is displayed.</msg>
+<status status="PASS" starttime="20190422 23:38:50.595" endtime="20190422 23:38:51.624"></status>
+</kw>
+<status status="PASS" starttime="20190422 23:38:25.168" endtime="20190422 23:38:51.624" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC02(Specific Date Summary Page (Clickable Cards))">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190422 23:38:51.689" level="INFO">Opening url 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'</msg>
+<status status="PASS" starttime="20190422 23:38:51.688" endtime="20190422 23:38:52.368"></status>
+</kw>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+</arguments>
+<msg timestamp="20190422 23:38:52.874" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:52.368" endtime="20190422 23:38:52.874"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //html/body/div/div[1]/div[1]/a/div/div</arg>
+</arguments>
+<msg timestamp="20190422 23:38:52.875" level="INFO">Clicking element 'xpath: //html/body/div/div[1]/div[1]/a/div/div'.</msg>
+<status status="PASS" starttime="20190422 23:38:52.875" endtime="20190422 23:38:54.144"></status>
+</kw>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${CLASSPAGE}</arg>
+</arguments>
+<msg timestamp="20190422 23:38:54.651" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/class.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:54.144" endtime="20190422 23:38:54.651"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20190422 23:38:54.652" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20190422 23:38:54.651" endtime="20190422 23:38:55.729"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]</arg>
+</arguments>
+<msg timestamp="20190422 23:38:55.730" level="INFO">Clicking element 'xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]'.</msg>
+<status status="PASS" starttime="20190422 23:38:55.729" endtime="20190422 23:38:57.011"></status>
+</kw>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${SUMMARYPAGE}</arg>
+</arguments>
+<msg timestamp="20190422 23:38:57.520" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
+<status status="PASS" starttime="20190422 23:38:57.012" endtime="20190422 23:38:57.520"></status>
+</kw>
+<kw name="Element Should Not Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath: //*[@id="cards"]/div</arg>
+</arguments>
+<msg timestamp="20190422 23:38:58.040" level="INFO">Element 'xpath: //*[@id="cards"]/div' did not exist.</msg>
+<status status="PASS" starttime="20190422 23:38:57.521" endtime="20190422 23:38:58.040"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="date"]</arg>
+</arguments>
+<msg timestamp="20190422 23:38:58.042" level="INFO">Clicking element 'xpath: //*[@id="date"]'.</msg>
+<status status="PASS" starttime="20190422 23:38:58.040" endtime="20190422 23:38:59.159"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="date"]/option[3]</arg>
+</arguments>
+<msg timestamp="20190422 23:38:59.160" level="INFO">Clicking element 'xpath: //*[@id="date"]/option[3]'.</msg>
+<status status="PASS" starttime="20190422 23:38:59.160" endtime="20190422 23:39:00.221"></status>
+</kw>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${SUMMARYPAGE}</arg>
+</arguments>
+<msg timestamp="20190422 23:39:00.729" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php'.</msg>
+<status status="PASS" starttime="20190422 23:39:00.221" endtime="20190422 23:39:00.729"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+</arguments>
+<msg timestamp="20190422 23:39:02.730" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190422 23:39:00.729" endtime="20190422 23:39:02.730"></status>
 </kw>
 <kw name="Element Should Be Visible" library="Selenium2Library">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath: //*[@id="cards"]/div</arg>
 </arguments>
-<msg timestamp="20190422 23:26:32.810" level="INFO">Element 'xpath: //*[@id="cards"]/div' is displayed.</msg>
-<status status="PASS" starttime="20190422 23:26:32.776" endtime="20190422 23:26:32.810"></status>
+<msg timestamp="20190422 23:39:03.768" level="INFO">Element 'xpath: //*[@id="cards"]/div' is displayed.</msg>
+<status status="PASS" starttime="20190422 23:39:02.730" endtime="20190422 23:39:03.768"></status>
 </kw>
 <kw name="Element Should Not Be Visible" library="Selenium2Library">
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
 <arguments>
 <arg>xpath: //*[@id="classStudent_wrapper"]</arg>
 </arguments>
-<msg timestamp="20190422 23:26:32.830" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' did not exist.</msg>
-<status status="PASS" starttime="20190422 23:26:32.811" endtime="20190422 23:26:32.830"></status>
+<msg timestamp="20190422 23:39:04.291" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' did not exist.</msg>
+<status status="PASS" starttime="20190422 23:39:03.769" endtime="20190422 23:39:04.291"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath: //*[@id="cards"]/div/div[3]/div/div</arg>
+<arg>xpath: //*[@id="cards"]/div/div[1]/div/div</arg>
 </arguments>
-<msg timestamp="20190422 23:26:32.831" level="INFO">Clicking element 'xpath: //*[@id="cards"]/div/div[3]/div/div'.</msg>
-<status status="PASS" starttime="20190422 23:26:32.831" endtime="20190422 23:26:32.917"></status>
+<msg timestamp="20190422 23:39:04.292" level="INFO">Clicking element 'xpath: //*[@id="cards"]/div/div[1]/div/div'.</msg>
+<status status="PASS" starttime="20190422 23:39:04.292" endtime="20190422 23:39:05.372"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2 seconds</arg>
 </arguments>
-<msg timestamp="20190422 23:26:34.919" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20190422 23:26:32.918" endtime="20190422 23:26:34.919"></status>
+<msg timestamp="20190422 23:39:07.374" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190422 23:39:05.372" endtime="20190422 23:39:07.374"></status>
 </kw>
-<kw name="Alert Should Be Present" library="Selenium2Library">
-<doc>Verifies that an alert is present and, by default, accepts it.</doc>
-<status status="PASS" starttime="20190422 23:26:34.919" endtime="20190422 23:26:34.928"></status>
-</kw>
-<kw name="Element Should Not Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath: //*[@id="classStudent_wrapper"]</arg>
 </arguments>
-<msg timestamp="20190422 23:26:34.944" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' did not exist.</msg>
-<status status="PASS" starttime="20190422 23:26:34.929" endtime="20190422 23:26:34.944"></status>
+<msg timestamp="20190422 23:39:08.404" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' is displayed.</msg>
+<status status="PASS" starttime="20190422 23:39:07.374" endtime="20190422 23:39:08.404"></status>
 </kw>
-<status status="PASS" starttime="20190422 23:26:22.171" endtime="20190422 23:26:34.945" critical="yes"></status>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="cards"]/div/div[2]/div/div</arg>
+</arguments>
+<msg timestamp="20190422 23:39:08.407" level="INFO">Clicking element 'xpath: //*[@id="cards"]/div/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20190422 23:39:08.406" endtime="20190422 23:39:09.484"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+</arguments>
+<msg timestamp="20190422 23:39:11.487" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190422 23:39:09.484" endtime="20190422 23:39:11.487"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath: //*[@id="classStudent_wrapper"]</arg>
+</arguments>
+<msg timestamp="20190422 23:39:12.552" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' is displayed.</msg>
+<status status="PASS" starttime="20190422 23:39:11.488" endtime="20190422 23:39:12.552"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="cards"]/div/div[3]/div/div</arg>
+</arguments>
+<msg timestamp="20190422 23:39:12.553" level="INFO">Clicking element 'xpath: //*[@id="cards"]/div/div[3]/div/div'.</msg>
+<status status="PASS" starttime="20190422 23:39:12.553" endtime="20190422 23:39:13.640"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+</arguments>
+<msg timestamp="20190422 23:39:15.642" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190422 23:39:13.640" endtime="20190422 23:39:15.642"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath: //*[@id="classStudent_wrapper"]</arg>
+</arguments>
+<msg timestamp="20190422 23:39:16.675" level="INFO">Element 'xpath: //*[@id="classStudent_wrapper"]' is displayed.</msg>
+<status status="PASS" starttime="20190422 23:39:15.643" endtime="20190422 23:39:16.675"></status>
+</kw>
+<status status="PASS" starttime="20190422 23:38:51.687" endtime="20190422 23:39:16.676" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190422 23:26:20.705" endtime="20190422 23:26:34.948"></status>
+<status status="PASS" starttime="20190422 23:38:24.526" endtime="20190422 23:39:16.708"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Ts02">Ts02</stat>
+<stat pass="2" fail="0" id="s1" name="Ts01">Ts01</stat>
 </suite>
 </statistics>
 <errors>

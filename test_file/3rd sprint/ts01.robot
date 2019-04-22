@@ -10,6 +10,7 @@ ${BROWSER}    Chrome
 
 *** Test Case ***
 TC01(All Class Summary Page)
+    Set Selenium Speed    0.5 seconds
     Open Browser    ${LOGINHOMEPAGE}    ${BROWSER}
     Location Should Contain    ${LOGINHOMEPAGE}
     Input Text    name=username    chitsutha
