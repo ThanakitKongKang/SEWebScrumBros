@@ -1,6 +1,6 @@
 <body>
 <h3 class="text-center mt-4">สรุปข้อมูลการมาเรียนของนักศึกษา ทุกคาบ</h3>
-    <div id="summaryAllDate" class="mb-5 px-3">
+    <div id="summaryAllDate" class="mb-5 px-3" style="max-width:1870px!important;">
        
 
         <?php
@@ -16,7 +16,9 @@
         $path .= "/SoftEn2019/Sec2/ScrumBros/model/getAllAttendInfoBySubjectID.php";
         include($path);
 
-        echo "<table style='max-width:1800px!important;min-width:fit-content!important;' class='table dataTable table-bordered table-responsive' id='summaryAllDateTable' data-page-length='50'>";
+        echo "<table style='max-width:1870px!important;' 
+        class='table dataTable table-bordered table-responsive' id='summaryAllDateTable' data-page-length='50'>";
+        
         $i = 0;
         // echo $stmt2->rowCount();
         while ($row = $stmt->fetch()) {
@@ -36,6 +38,7 @@
 
                 while ($rowDate = $getDate->fetch()) {
                     echo '<th class="text-center">' . $rowDate['dayCheckName'] . '</th>';
+                
                   
                 }
                 echo '<th class="text-center">มาเรียน</th>
@@ -76,6 +79,7 @@
                 while ($rowAttend = $attendByID->fetch()) {
                     if ($rowAttend['attendanceStatus'] == 'มา') {
                         echo '<td class="text-center text-white bg-success">' . $rowAttend['attendanceStatus'] . '</td>';
+                       
                         $thisStudentPresent++;
                     } else if ($rowAttend['attendanceStatus'] == 'ขาด') {
                         echo '<td class="text-center text-white bg-danger">' . $rowAttend['attendanceStatus'] . '</td>';
