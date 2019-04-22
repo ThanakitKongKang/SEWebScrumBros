@@ -2,73 +2,37 @@
 Library    Selenium2Library
 
 *** Variable ***
-${LOGINPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/login.php
-${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/SoftEn2019/Sec2/ScrumBros/home.php
+${LOGINHOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/login.php
+${HOMEPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/home.php
+${CLASSPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/class.php
+${SUMMARYPAGE}    http://10.199.66.227/SoftEn2019/Sec2/ScrumBros/summary.php
 ${BROWSER}    Chrome
 
 *** Test Case ***
-TC01(Empty password)
-    Open Browser    ${LOGINPAGE}    ${BROWSER}
-    Location Should Be    ${LOGINPAGE}
+TC01(Specific Date Summary Page (Unclickable Cards))
+    Set Selenium Speed    0.5 seconds
+    Open Browser    ${LOGINHOMEPAGE}    ${BROWSER}
+    Location Should Contain    ${LOGINHOMEPAGE}
     Input Text    name=username    chitsutha
-    Click Button    login-button
-    Location Should Be    ${LOGINPAGE}
-    Page Should Contain    Failed, password is
-    Page Should Contain    incorrect.
-    Page Should Contain    you have
-    Page Should Contain    2
-    Page Should Contain    chances, then
-    Page Should Contain    your account will be restricted
-
-TC02(Empty Username)
-    Go To    ${LOGINPAGE}
-    Location Should Be    ${LOGINPAGE}
     Input Text    name=password    chitsuthakku2019
     Click Button    login-button
-    Location Should Be    ${LOGINPAGE}
-    Page Should Contain    Failed,
-    Page Should Contain    User not found.
+    Location Should Contain    ${HOMEPAGE}
+    Click Element    xpath: //html/body/div/div[1]/div[1]/a/div/div
+    Location Should Contain    ${CLASSPAGE}
 
-TC03(Wrong Username)
-    Go To    ${LOGINPAGE}
-    Location Should Be    ${LOGINPAGE}
-    Input Text    name=username    Wronguser
-    Input Text    name=password    chitsuthakku2019
-    Click Button    login-button
-    Location Should Be    ${LOGINPAGE}
-    Page Should Contain    Failed,
-    Page Should Contain    User not found.
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]
+    Location Should Contain    ${SUMMARYPAGE}
 
-TC04(Wrong password)
-    Go To    ${LOGINPAGE}
-    Location Should Be    ${LOGINPAGE}
-    Input Text    name=username    chitsutha
-    Input Text    name=password    Wrongpassword
-    Click Button    login-button
-    Location Should Be    ${LOGINPAGE}
-    Page Should Contain    Failed, password is
-    Page Should Contain    incorrect.
-    Page Should Contain    you have
-    Page Should Contain    1
-    Page Should Contain    chances, then
-    Page Should Contain    your account will be restricted
-
-TC05(Locked Account)
-    Go To    ${LOGINPAGE}
-    Location Should Be    ${LOGINPAGE}
-    Input Text    name=username    593021274-1
-    Input Text    name=password    thisisthengs
-    Click Button    login-button
-    Input Text    name=username    593021274-1
-    Input Text    name=password    khntibjtkfy
-    Click Button    login-button
-    Input Text    name=username    593021274-1
-    Input Text    name=password    nbj,fngkdh
-    Click Button    login-button
-    Input Text    name=username    593021274-1
-    Input Text    name=password    meytawut274-1
-    Click Button    login-button
-    Page Should Contain    Failed, after you have made
-    Page Should Contain    3 unsuccessful attempts
-    Page Should Contain    your account is restricted!!
-    Page Should Contain    , please contact support.
+    Element Should Not Be Visible    xpath: //*[@id="cards"]/div
+    Click Element    xpath: //*[@id="date"]
+    Click Element    xpath: //*[@id="date"]/option[4]
+    Location Should Contain    ${SUMMARYPAGE}
+    Sleep    2 seconds
+    Element Should Be Visible    xpath: //*[@id="cards"]/div
+    
+    Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"]
+    Click Element    xpath: //*[@id="cards"]/div/div[3]/div/div
+    Sleep    2 seconds
+    Alert Should Be Present    text=ไม่สามารถทำรายการได้ ไม่มีนักศึกษาที่ลา
+    Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"]
