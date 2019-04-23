@@ -197,10 +197,8 @@ include_once($path);
                                 <th>ชื่อ - สกุล</th>
                                 <th class="text-center">ชั้นปี</th>
                                 <th class="text-center">สาขา</th>
-                                <th class="text-center">สถานะ</th>';
-                                if ($row['attendanceStatus'] == 'ลา') {
-                                    echo '<th class="text-center">หมายเหตุ</th>';
-                                }
+                                <th class="text-center">สถานะ</th>
+                                <th class="text-center">หมายเหตุ</th>'; 
 
                                 echo '</tr></thead><tbody>';
                             }
@@ -210,13 +208,12 @@ include_once($path);
                                 <td class="text-center">' . $row['Year'] . '</td>
                                 <td class="text-center">' . $row['Branch'] . '</td>
                                 <td class="text-center">' . $row['attendanceStatus'] . '</td>';
-                            if ($row['attendanceStatus'] == 'ลา') {
                                 if ($row['note'] == null) {
                                     echo '<td class="text-center">-</td>';
                                 } else  if ($row['note'] != null) {
                                     echo '<td class="text-center">' . $row['note'] . '</td>';
                                 }
-                            }
+                            
                             echo '</tr>';
                             $i++;
                         } ?>

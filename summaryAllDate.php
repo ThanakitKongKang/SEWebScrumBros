@@ -78,14 +78,27 @@
 
                 while ($rowAttend = $attendByID->fetch()) {
                     if ($rowAttend['attendanceStatus'] == 'มา') {
-                        echo '<td class="text-center text-white bg-success">' . $rowAttend['attendanceStatus'] . '</td>';
-                       
+                        if($rowAttend['note']!=null)
+                        echo '<td class="text-center text-white bg-success" title="'.$rowAttend['note'].'">' . $rowAttend['attendanceStatus'] . '</td>';
+
+                       else if($rowAttend['note']==null)
+                       echo '<td class="text-center text-white bg-success" title="ไม่มีหมายเหตุ">' . $rowAttend['attendanceStatus'] . '</td>';
                         $thisStudentPresent++;
+
                     } else if ($rowAttend['attendanceStatus'] == 'ขาด') {
-                        echo '<td class="text-center text-white bg-danger">' . $rowAttend['attendanceStatus'] . '</td>';
+                        if($rowAttend['note']!=null)
+                        echo '<td class="text-center text-white bg-danger" title="'.$rowAttend['note'].'">' . $rowAttend['attendanceStatus'] . '</td>';
+
+                        else if($rowAttend['note']==null)
+                        echo '<td class="text-center text-white bg-danger" title="ไม่มีหมายเหตุ">' . $rowAttend['attendanceStatus'] . '</td>';
                         $thisStudentAbsent++;
+
                     } else if ($rowAttend['attendanceStatus'] == 'ลา') {
+                        if($rowAttend['note']!=null)
                         echo '<td class="text-center text-white bg-warning" title="'.$rowAttend['note'].'">' . $rowAttend['attendanceStatus'] . '</td>';
+
+                        else if($rowAttend['note']==null)
+                        echo '<td class="text-center text-white bg-warning" title="ไม่มีหมายเหตุ">' . $rowAttend['attendanceStatus'] . '</td>';
                         $thisStudentLeave++;
                     }
                 }
