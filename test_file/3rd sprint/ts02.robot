@@ -36,3 +36,16 @@ TC01(Specific Date Summary Page (Unclickable Cards))
     Sleep    2 seconds
     Alert Should Be Present    text=ไม่สามารถทำรายการได้ ไม่มีนักศึกษาที่ลา
     Element Should Not Be Visible    xpath: //*[@id="classStudent_wrapper"]
+    
+TC01(Summary Page (Empty))
+    Go To    ${HOMEPAGE}
+    Click Element    xpath: /html/body/div/div[3]/div[3]/a/div/div
+    Location Should Contain    ${CLASSPAGE}
+
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/a
+    Click Element    xpath: //*[@id="navbarSupportedContent"]/ul/li[2]/div/table/tbody/tr[2]
+    Location Should Contain    ${SUMMARYPAGE}
+
+    Element Should Not Be Visible    xpath: //*[@id="cards"]/div
+    Click Element    xpath: //*[@id="date"]
+    Element Should Contain    xpath: //*[@id="date"]/option    ไม่มีข้อมูลการเข้าเรียน
